@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luoghi della vicenda Bellomo</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+  html,body{margin:0;height:100%;background:#e6e1d5}
+  #map{position:absolute;inset:0;filter:grayscale(1) contrast(.92) brightness(1.04)}
+  .leaflet-container{background:#e6e1d5;font-family:"IBM Plex Mono",ui-monospace,monospace}
+  .lbl{font:500 11px/1.3 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.02em;color:#17140f;background:rgba(241,237,228,.92);border:1px solid rgba(23,20,15,.25);padding:3px 7px;white-space:nowrap}
+  .leaflet-control-attribution{font-size:9px;background:rgba(241,237,228,.85)}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+  var map = L.map('map', { zoomControl: false, attributionControl: true, scrollWheelZoom: false, dragging: true });
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors', maxZoom: 18
+  }).addTo(map);
+
+  var views = {
+    vallisa: { c: [41.1283, 16.8690], z: 17 },
+    porto:   { c: [41.1355, 16.8680], z: 15 },
+    torretresca: { c: [41.1090, 16.8430], z: 15 },
+    nisida:  { c: [40.7936, 14.1655], z: 15 },
+    sacrario:{ c: [41.1130, 16.8620], z: 14 }
+  };
+
+  var points = [
+    { ll: [41.1283, 16.8690], t: 'Strada Vallisa, Bari vecchia - luogo di nascita, 1881' },
+    { ll: [41.1370, 16.8700], t: 'Porto di Bari - 9 settembre 1943' },
+    { ll: [41.1300, 16.8660], t: 'Bari vecchia - i vicoli usati nella difesa' },
+    { ll: [41.1090, 16.8430], t: 'Torre Tresca - area del campo di prigionia (posizione indicativa)' },
+    { ll: [40.7936, 14.1655], t: 'Nisida - fucilazione, 11 settembre 1945' }
+  ];
+  points.forEach(function (p) {
+    L.circleMarker(p.ll, { radius: 5, color: '#8f2f1c', weight: 2, fillColor: '#8f2f1c', fillOpacity: .85 }).addTo(map);
+    L.marker(p.ll, { icon: L.divIcon({ className: '', html: '<div class="lbl">' + p.t + '</div>', iconSize: null, iconAnchor: [-10, 8] }), interactive: false }).addTo(map);
+  });
+
+  function go(name, animate) {
+    var v = views[name] || views.porto;
+    map.setView(v.c, v.z, { animate: animate !== false });
+  }
+  go('porto', false);
+
+  window.addEventListener('message', function (e) {
+    if (e.data && e.data.mapView) go(e.data.mapView, true);
+  });
+</script>
+</body>
+</html>

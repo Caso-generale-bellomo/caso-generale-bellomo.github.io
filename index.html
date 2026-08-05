@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generale Nicola Bellomo - documenti e riflessioni per la ricerca storica</title>
+<meta name="description" content="Archivio documentale sul caso del generale Nicola Bellomo (1881-1945): rapporto tecnico integrale, fotografie d'epoca, saggi storici e bibliografia.">
+<meta name="author" content="Nicola Bellomo">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Generale Nicola Bellomo - documenti e riflessioni per la ricerca storica">
+<meta property="og:description" content="Archivio documentale sul caso del generale Nicola Bellomo (1881-1945): rapporto tecnico integrale, fotografie d'epoca, saggi storici e bibliografia.">
+<meta property="og:image" content="assets/foto/foto-4.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f1ede4'/%3E%3Crect x='6' y='7' width='3' height='18' fill='%238f2f1c'/%3E%3Crect x='13' y='7' width='13' height='2.6' fill='%2317140f'/%3E%3Crect x='13' y='14.7' width='13' height='2.6' fill='%2317140f'/%3E%3Crect x='13' y='22.4' width='13' height='2.6' fill='%2317140f'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="pagina">
+
+<nav class="nav" aria-label="Navigazione principale">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top">Generale Nicola Bellomo</a>
+    <div class="nav__links">
+      <a href="#presentazione">Presentazione</a>
+      <a href="#sintesi">Sintesi</a>
+      <a href="#fotografie">Fotografie</a>
+      <a href="#rapporto">Il rapporto</a>
+      <a href="#saggio">Saggio di Martino</a>
+      <a href="#bibliografia">Bibliografia</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero__inner">
+    <div class="hero__testo">
+      <span class="eyebrow">Archivio documentale · 1881-1945</span>
+      <h1 class="hero__titolo">Generale<br>Nicola Bellomo</h1>
+      <p class="hero__sottotitolo">Documenti e riflessioni per la ricerca storica su una vicenda ancora aperta.</p>
+      <div class="hero__meta">
+        <span>Bari, 9 settembre 1943</span>
+        <span>Nisida, 11 settembre 1945</span>
+      </div>
+    </div>
+    <figure class="hero__figura">
+      <img src="assets/foto/foto-4.jpg" alt="Il generale Nicola Bellomo in uniforme, a capo di un corteo di ufficiali" width="680" height="510">
+      <figcaption class="didascalia">Il generale Bellomo in uniforme, alla testa di un gruppo di ufficiali. Didascalia e data da confermare.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<section class="sezione sezione--fascia presentazione" id="presentazione">
+  <div class="wrap">
+    <div class="cols">
+      <div class="cols__label">
+        <h2 class="titolo-etichetta">Presentazione<br>e finalità</h2>
+      </div>
+      <div class="cols__body prosa">
+        <p class="attacco">Il sito web ha lo scopo di raccogliere documenti che possano contribuire alla ricerca storica sui lati oscuri della vicenda del generale Bellomo, tenendo conto che molti italiani, e i partigiani in particolare, hanno lottato (e molti di loro sono caduti) per liberare la nazione e portarla verso la democrazia e una Costituzione repubblicana.</p>
+        <p>I documenti in questo sito possono essere utili per preservare la memoria del dialogo tra Bellomo e i cittadini di Bari, che ha contribuito al complesso percorso verso la democrazia.</p>
+        <div class="nota">
+          <div class="nota__label">Nota di trasparenza</div>
+          <p>In qualità di responsabile di questo sito, sono consapevole che, vista la relazione di parentela, potrei essere considerato condizionato da una visione personale. Pertanto mi riferirò prevalentemente a documenti, e cercherò di evidenziare esplicitamente le mie interpretazioni personali. Per quanto riguarda i documenti citati, indico la loro reperibilità su siti internet.</p>
+        </div>
+        <p class="responsabile">Responsabile dei contenuti: <strong>Nicola Bellomo</strong>, nipote del generale Bellomo, professore emerito del Politecnico di Torino - <a href="https://www.modelinglife.io/documents/Bellomo-cv.pdf" target="_blank" rel="noopener">curriculum vitae (PDF)</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione" id="sintesi">
+  <div class="wrap sintesi__intro">
+    <span class="eyebrow">Sintesi visiva</span>
+    <h2 class="h2">Luoghi, date e volti della vicenda</h2>
+    <p class="occhiello">Otto passaggi, dalla nascita in strada Vallisa alla tumulazione nel Sacrario dei Caduti d'Oltremare. Le mappe sono di orientamento generale: le posizioni indicate non ricostruiscono i movimenti militari del 9 settembre.</p>
+  </div>
+
+  <!-- Scrollytelling: la visuale resta sticky a piena finestra, le schede scorrono sopra.
+       La mappa (iframe Leaflet) sta sempre sotto e non va mai rimossa dal DOM:
+       rimontarla ricaricherebbe le tile. Le immagini compaiono in dissolvenza. -->
+  <div class="scrolly" id="scrolly">
+    <div class="scrolly__sticky">
+      <div class="scrolly__palco">
+        <div class="scrolly__mappa">
+          <iframe id="mappa" src="mappa-bari.html" title="Mappa dei luoghi della vicenda" loading="lazy"></iframe>
+        </div>
+        <img class="scrolly__layer" id="vis-2" src="assets/foto/foto-1.jpg" alt="Ufficiali e soldati al fronte, prima guerra mondiale" loading="lazy">
+        <img class="scrolly__layer" id="vis-3" src="assets/foto/foto-2.jpg" alt="Ufficiali in esercitazione in campo aperto" loading="lazy">
+        <img class="scrolly__layer" id="vis-6" src="assets/foto/nisida-1.jpg" alt="La lapide nel luogo della prima sepoltura a Nisida" loading="lazy">
+        <img class="scrolly__layer scrolly__layer--libro" id="vis-7" src="assets/copertine/04-bianco-caso-bellomo-1995.jpg" alt="Copertina di Il Caso Bellomo di Fiorella Bianco, Mursia, 1995" loading="lazy">
+        <img class="scrolly__layer" id="vis-8" src="assets/foto/foto-7.jpg" alt="Cerimonia nel Sacrario dei Caduti d'Oltremare a Bari" loading="lazy">
+        <div class="scrolly__velo"></div>
+        <p class="scrolly__didascalia" id="scrolly-didascalia">Bari vecchia, strada Vallisa - mappa di orientamento (© OpenStreetMap contributors)</p>
+      </div>
+    </div>
+
+    <ol class="scrolly__passi">
+      <li class="scrolly__passo" id="st1"
+          data-mappa="vallisa"
+          data-didascalia="Bari vecchia, strada Vallisa - mappa di orientamento (© OpenStreetMap contributors)">
+        <div class="scrolly__passo-data">2 febbraio 1881 · Bari vecchia</div>
+        <h3>Nasce in strada Vallisa</h3>
+        <p>Uno dei sette figli di Andrea, marinaio e armatore di pescherecci. I vicoli della città vecchia in cui cresce sono gli stessi che, sessantadue anni dopo, useranno i suoi uomini per aggirare i tedeschi al porto.</p>
+      </li>
+      <li class="scrolly__passo" id="st2"
+          data-visuale="vis-2"
+          data-didascalia="Al fronte con i soldati, 1915-1918 [didascalia da confermare]">
+        <div class="scrolly__passo-data">1915-1918 · il fronte</div>
+        <h3>Dalla Accademia al fronte</h3>
+        <p>Entra in guerra capitano e la conclude tenente colonnello: medaglia d'argento, Croce al merito di guerra e Croce di guerra francese.</p>
+      </li>
+      <li class="scrolly__passo" id="st3"
+          data-visuale="vis-3"
+          data-didascalia="Ufficiali in esercitazione [didascalia da confermare]">
+        <div class="scrolly__passo-data">1935 · la rottura</div>
+        <h3>Il rapporto sulla difesa contraerea</h3>
+        <p>Tre mesi di studio e un giudizio senza sconti: di 130 batterie contraeree solo una trentina impiegabili, munizioni per una giornata e mezza. Il regime legge il rapporto come un attacco alla Milizia. Bellomo non viene promosso e si dimette.</p>
+      </li>
+      <li class="scrolly__passo" id="st4"
+          data-mappa="torretresca"
+          data-didascalia="Torre Tresca, periferia di Bari - posizione indicativa del campo di prigionia (© OpenStreetMap contributors)">
+        <div class="scrolly__passo-data">30 novembre 1941 · Torre Tresca</div>
+        <h3>Due prigionieri britannici tentano la fuga</h3>
+        <p>Nel campo per prigionieri britannici di Torre Tresca, alla periferia di Bari, il capitano Playne e il tenente Cooke tentano la fuga: Playne muore, Cooke resta ferito. Sono i fatti per cui Bellomo, comandante del Presidio, verrà processato quattro anni dopo.</p>
+      </li>
+      <li class="scrolly__passo" id="st5"
+          data-mappa="porto"
+          data-didascalia="Il porto di Bari e la città vecchia - mappa di orientamento (© OpenStreetMap contributors)">
+        <div class="scrolly__passo-data">9 settembre 1943 · porto di Bari</div>
+        <h3>“Difendete le vostre case”</h3>
+        <p>Il giorno dopo l'armistizio i tedeschi iniziano a minare il porto. Bellomo, comandante del Presidio, interviene con pochi soldati, i portuali e i ragazzi di Bari vecchia. Dopo un pomeriggio di scontri i tedeschi si arrendono; lui è ferito a un braccio.</p>
+      </li>
+      <li class="scrolly__passo" id="st6"
+          data-visuale="vis-6"
+          data-didascalia="La lapide nel luogo della prima sepoltura, Nisida [da confermare]">
+        <div class="scrolly__passo-data">luglio-11 settembre 1945 · Nisida</div>
+        <h3>Il processo e la fucilazione</h3>
+        <p>Una corte militare britannica lo giudica in sei giorni per i fatti di Torre Tresca del 1941. Il difensore di fiducia non entra in aula, i testimoni a discarico non vengono ascoltati. Rifiuta la domanda di grazia: non si ritiene colpevole.</p>
+      </li>
+      <li class="scrolly__passo" id="st7"
+          data-visuale="vis-7"
+          data-didascalia="Fiorella Bianco, Il Caso Bellomo, Mursia, 1995 - il libro che ricostruisce inchieste e verbali">
+        <div class="scrolly__passo-data">Le prove · inchieste e perizie</div>
+        <h3>Cosa dicono i documenti</h3>
+        <p>Le perizie e le cartelle cliniche della Croce Rossa indicano colpi alle spalle, sparati dalle sentinelle dopo l'intimazione dell'alt, e il caricatore della pistola del generale intatto. Due inchieste, militare italiana e della Croce Rossa Internazionale, ne riconoscono la legittimità del comportamento. I documenti della prima inchiesta scompaiono; i verbali del processo restano secretati fino al 1995.</p>
+      </li>
+      <li class="scrolly__passo" id="st8"
+          data-visuale="vis-8"
+          data-didascalia="Sacrario dei Caduti d'Oltremare, Bari, 27 novembre 1976 [da confermare]">
+        <div class="scrolly__passo-data">1951 · 1976 · Bari</div>
+        <h3>Quello che lo Stato riconobbe</h3>
+        <p>Medaglia d'argento per la difesa del porto nel 1951, tumulazione con gli onori del grado di generale nel Sacrario dei Caduti d'Oltremare nel 1976. Il processo, invece, non fu mai riconosciuto - né contestato.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Timeline delle date chiave: disattivata perché ridondante con la sintesi visiva.
+     Per riattivarla basta togliere l'attributo hidden qui sotto. -->
+<section class="sezione timeline" hidden>
+  <div class="wrap">
+    <h2 class="timeline__titolo">Date chiave</h2>
+    <ol class="timeline__griglia">
+      <li>
+        <div class="timeline__anno">1881</div>
+        <div class="timeline__voce">Nasce a Bari, strada Vallisa, figlio di un marinaio e armatore.</div>
+      </li>
+      <li>
+        <div class="timeline__anno">1915-18</div>
+        <div class="timeline__voce">Prima guerra mondiale: medaglia d'argento e croce di guerra.</div>
+      </li>
+      <li>
+        <div class="timeline__anno">1935</div>
+        <div class="timeline__voce">Rapporto sulla difesa contraerea: rottura con il regime, dimissioni.</div>
+      </li>
+      <li>
+        <div class="timeline__anno">1941</div>
+        <div class="timeline__voce">Richiamato in servizio, comandante del Presidio militare di Bari.</div>
+      </li>
+      <li>
+        <div class="timeline__anno">9 sett. 1943</div>
+        <div class="timeline__voce">Difesa del porto di Bari: “Difendete le vostre case”.</div>
+      </li>
+      <li>
+        <div class="timeline__anno">luglio 1945</div>
+        <div class="timeline__voce">Processo davanti alla corte militare britannica.</div>
+      </li>
+      <li>
+        <div class="timeline__anno">11 sett. 1945</div>
+        <div class="timeline__voce">Fucilazione a Nisida.</div>
+      </li>
+      <li>
+        <div class="timeline__anno">1995 · 2026</div>
+        <div class="timeline__voce">Desecretazione dei verbali; ristampa del libro e saggio di Martino.</div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="sezione sezione--fascia" id="fotografie">
+  <div class="wrap">
+    <div class="fotografie__testa">
+      <h2>Fotografie</h2>
+      <p class="fotografie__nota">Immagini d'epoca dall'archivio di famiglia. Le didascalie sono provvisorie e vanno confermate con il responsabile dei contenuti.</p>
+    </div>
+    <div class="griglia-foto">
+      <figure>
+        <img src="assets/foto/foto-1.jpg" alt="Ufficiali e soldati con equipaggiamento da campagna" loading="lazy">
+        <figcaption class="didascalia">Al fronte con i soldati, prima guerra mondiale. [didascalia da confermare]</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/foto/foto-2.jpg" alt="Ufficiali in campo aperto durante un'esercitazione" loading="lazy">
+        <figcaption class="didascalia">Ufficiali in esercitazione, murgia barese. [didascalia da confermare]</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/foto/foto-6.jpg" alt="Cerimonia militare all'aperto, consegna di un riconoscimento" loading="lazy">
+        <figcaption class="didascalia">Cerimonia militare: consegna di un riconoscimento. [didascalia da confermare]</figcaption>
+      </figure>
+    </div>
+    <div class="griglia-foto">
+      <figure>
+        <img src="assets/foto/foto-parata.jpg" alt="Parata militare in una piazza cittadina, primo Novecento" loading="lazy">
+        <figcaption class="didascalia">Parata militare in piazza. [didascalia e data da confermare]</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/foto/foto-7.jpg" alt="Cerimonia al Sacrario dei Caduti d'Oltremare a Bari" loading="lazy">
+        <figcaption class="didascalia">Cerimonia di tumulazione nel Sacrario dei Caduti d'Oltremare, Bari, 27 novembre 1976. [da confermare]</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/foto/nisida-1.jpg" alt="Lapide nel luogo della prima sepoltura a Nisida" loading="lazy">
+        <figcaption class="didascalia">La lapide nel luogo della prima sepoltura, Nisida. [didascalia da confermare]</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sezione" id="rapporto">
+
+  <div class="indice">
+    <div class="indice__inner">
+      <span class="indice__label">Rapporto</span>
+      <div class="indice__links">
+        <a href="#s1" data-idx="s1">1 Sintesi storica</a>
+        <a href="#s2" data-idx="s2">2 Figura e carriera</a>
+        <a href="#s3" data-idx="s3">3 Processo</a>
+        <a href="#s4" data-idx="s4">4 Testi e saggi</a>
+        <a href="#s5" data-idx="s5">5 Altre fonti</a>
+        <a href="#s6" data-idx="s6">6 Riflessioni</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap rapporto__testa">
+    <span class="eyebrow">Rapporto tecnico · testo integrale</span>
+    <h2 class="h2--grande">Il caso del generale Nicola Bellomo</h2>
+    <p class="occhiello">Documento redatto da Nicola Bellomo, nipote del generale. Sei sezioni, ringraziamenti e bibliografia. Il testo è riprodotto integralmente.</p>
+
+    <div class="rapporto__sommario">
+      <ol class="sommario">
+        <li><a href="#s1"><span class="sommario__n">1</span>Sintesi storica e motivazioni</a></li>
+        <li><a href="#s2"><span class="sommario__n">2</span>Note sulla figura e carriera militare</a></li>
+        <li><a href="#s3"><span class="sommario__n">3</span>Processo al generale Nicola Bellomo</a></li>
+        <li><a href="#s4"><span class="sommario__n">4</span>Lettura di testi e saggi storici</a></li>
+        <li><a href="#s5"><span class="sommario__n">5</span>Ulteriori fonti di informazione</a></li>
+        <li><a href="#s6"><span class="sommario__n">6</span>Riflessioni</a></li>
+      </ol>
+      <a class="scheda-pdf" href="assets/pdf/rapporto-tecnico.pdf" target="_blank" rel="noopener">
+        <div class="scheda-pdf__label">PDF · 20 pagine</div>
+        <div class="scheda-pdf__titolo">Scarica il rapporto</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="wrap rapporto__corpo">
+
+    <article class="sez" id="s1">
+      <div class="sez__riga">
+        <div class="sez__label"><div class="etichetta">Sezione 1</div></div>
+        <div class="sez__corpo">
+          <h3>Sintesi storica e motivazioni</h3>
+          <div class="prosa">
+            <p class="attacco">L'11 settembre 1945 il generale Nicola Bellomo cadeva sotto il fuoco di un plotone di esecuzione inglese. L'esecuzione avvenne a seguito di un processo nel quale una corte militare inglese lo aveva condannato alla fucilazione per aver provocato la morte di un ufficiale inglese ed il ferimento di un altro ufficiale durante un tentativo di fuga dal campo di prigionia di Torre Tresca, in provincia di Bari.</p>
+            <p>Il processo fu condotto secondo un iter che violava palesemente i più elementari diritti di difesa. Lo stesso addetto stampa britannico Cyril Ray, giornalista del Daily Express, non mancò di criticare la conduzione del processo. Un servizio della BBC, curato dal giornalista Ken Kirby e trasmesso nel 1989, conferma pienamente i dubbi sulla correttezza legale del processo.</p>
+            <p>Durante la prima guerra mondiale (1915-1918), Nicola Bellomo si era distinto ricevendo una medaglia d'argento e la croce di guerra. Tornò dalla guerra con il grado di tenente colonnello. Successivamente entrò in conflitto con le alte gerarchie militari del periodo fascista. L'episodio che segnò la sua carriera fu un rapporto tecnico molto negativo sugli armamenti di difesa aerea. Questo rapporto non fu gradito dagli alti gradi e Bellomo fu messo in congedo. Fu richiamato in servizio e promosso al grado di generale di brigata, per poi essere promosso al grado di generale di divisione. Segnalo due episodi chiave precedenti al processo:</p>
+            <ol>
+              <li>Nel febbraio del 1941, Nicola Bellomo catturò alcuni militari inglesi che erano stati paracadutati nella zona del Vulture con l'ordine di sabotare l'Acquedotto Pugliese. La milizia fascista aveva armato alcuni civili che si scontrarono con i paracadutisti inglesi. Uno dei civili fu colpito a morte e un altro rimase ferito. Il generale Adami-Rossi chiese a Bellomo di giustiziare il paracadutista tenente Jowett. Bellomo si rifiutò, spiegando ad Adami-Rossi che l'evento era avvenuto in un'azione di guerra e che, pertanto, Jowett era un prigioniero di guerra e non poteva essere fucilato. Adami-Rossi desistette. Jowett si salvò e chiese di testimoniare nel processo. Ma non gli fu permesso.</li>
+              <li>Il 9 settembre 1943, il giorno dopo la dichiarazione dell'armistizio, le truppe tedesche ancora di stanza a Bari avevano intenzione di minare il porto per renderlo inutilizzabile. Avevano già iniziato l'azione distruttiva, quando il generale Bellomo intervenne con un piccolo gruppo di militari e cittadini, che si unirono a loro nonostante fossero male armati. Grazie al loro coraggio e alla conoscenza dei vicoli della città adiacente al porto, riuscirono a respingere i militari tedeschi e a catturare dei prigionieri. Bellomo fu anche ferito a un braccio.</li>
+            </ol>
+            <p>Di fatto la Repubblica Italiana non si oppose al processo, ma si limitò a non riconoscerlo. Nicola Bellomo fu dichiarato “deceduto per arma da fuoco”; mantenne il grado di generale; gli fu conferita una medaglia d'argento per la difesa della città di Bari. Il caso del generale Nicola Bellomo ha scosso le coscienze della nazione italiana. Sono trascorsi più di 80 anni dalla data della conclusione di questo processo e della condanna a morte, eseguita l'11 settembre 1945. Tuttavia, questa vicenda è ancora oggi oggetto di riflessioni, studi storici e interrogativi, come dimostra il recente saggio di Pasquale Martino: “Lo strano caso del generale Bellomo, che dopo l'armistizio combatté i tedeschi e fu fucilato. Dagli inglesi”, 2026. Il saggio, pubblicato sulla rivista “Patria Indipendente”, ricostruisce gli aspetti chiave della vicenda e pone quesiti sui quali è doveroso riflettere e ai quali è possibile rispondere attraverso ricerche documentate.</p>
+            <p>Il tema è stato trattato in vari articoli pubblicati nel primo dopoguerra, dopo il processo al generale e fino ai giorni nostri. È una ferita per una nazione che cercava di uscire, seppur fra molte contraddizioni, dalla guerra.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="sez" id="s2">
+      <div class="sez__riga">
+        <div class="sez__label"><div class="etichetta">Sezione 2</div></div>
+        <div class="sez__corpo">
+          <h3>Note sulla figura e carriera militare</h3>
+          <div class="prosa">
+            <p>La descrizione della figura e della carriera militare del generale Bellomo è affidata a documenti dell'Associazione Nazionale Partigiani d'Italia e dell'Associazione Nastro Azzurro. Alcune frasi chiave sono tratte da questi documenti e riportate di seguito. Il riferimento al sito web da cui è possibile reperire i documenti precede queste frasi.</p>
+            <figure class="fonte">
+              <figcaption class="fonte__cap">Biografia ANPI - <a href="http://www.anpi.it/biografia/nicola-bellomo" target="_blank" rel="noopener">anpi.it</a></figcaption>
+              <blockquote class="cit">Di fronte alla totale inerzia del generale Caruso - che, in quanto comandante del presidio, era stato inutilmente sollecitato dagli antifascisti baresi perchè prendesse almeno iniziative difensive nei confronti delle truppe germaniche - fu Bellomo che, alla testa di un gruppo di portuali e di pochi soldati delle varie armi, attaccò i tedeschi. Questi, con un colpo di mano, erano già riusciti ad affondare due piroscafi alla fonda e ad impadronirsi di due batterie contraeree. Dopo un pomeriggio di scontri, il generale Bellomo (che rimase ferito nei combattimenti) e i suoi uomini, ottennero la resa dei tedeschi. Li consegnarono al comando di presidio, che si premurò di rimetterli in libertà.</blockquote>
+            </figure>
+            <figure class="fonte">
+              <figcaption class="fonte__cap">Istituto del Nastro Azzurro, 18 dicembre 2020 - <a href="https://www.istitutodelnastroazzurro.org/2020/12/18/il-generale-bellomo-criminale-di-guerra-o-eroe/" target="_blank" rel="noopener">il testo</a></figcaption>
+              <blockquote class="cit">
+                <p>La sua fama è alle stelle ma commette un errore. Un errore che gli costerà la vita. Come riferisce lo storico Emilio Gin, in un recente numero della “Nuova Rivista Storica”, Bellomo si rende protagonista di un'ampia opera di denunzia e di rimozione di tutti coloro che durante gli eventi avevano tenuto un comportamento passivo o sospetto di connivenza con i tedeschi. Le sue accuse contro quanti il 9 settembre non avevano preso apertamente posizione contro il “vecchio alleato” e anzi ne avevano consentito la facile ritirata dal porto ed il trasferimento in treno verso il nord barese (dove lo stesso “vecchio alleato” perpetrò le stragi e gli eccidi di Barletta, Spinazzola, Murgetta Rossa, ecc.), incominciarono a impressionare seriamente Badoglio e il suo Stato Maggiore, insediatisi nel frattempo a Brindisi.</p>
+                <p>Oltretutto, costoro, cosi' come sostiene il Prof. Vito Antonio Leuzzi, direttore del Centro Studi dell'Antifascismo di Bari, temevano che Inglesi e Americani, a guerra finita, potessero istituire una Norimberga italiana sui crimini di guerra commessi da alcuni generali italiani, specie nei Balcani. Ma forse si sarebbe potuto scongiurare tale pericolo offrendo, su un piatto d'argento, la testa del Generale Bellomo alle Autorità Inglesi (sempre severe e intransigenti, malgrado la cobelligeranza, nei confronti dell'Italia). E perchè proprio Bellomo? Perchè cosi' si sarebbe eliminato lo scomodo testimone dei fatti dell'8 e 9 settembre.</p>
+              </blockquote>
+            </figure>
+            <p>Seguono alcune note storiche redatte a cura del generale Giorgio Blais.</p>
+            <figure class="fonte">
+              <figcaption class="fonte__cap">Note storiche del gen. Giorgio Blais - <a href="https://www.centenarioanarti.it/dai-gruppi-di-combattimento-al-nuovo-esercito-italiano/" target="_blank" rel="noopener">centenarioanarti.it</a></figcaption>
+              <blockquote class="cit">
+                <p>Nicola Bellomo nacque a Bari il 2 febbraio 1881. Diplomatosi nel 1901, entrò nella Regia Accademia di Artiglieria e Genio di Torino da cui usci' con il grado di Tenente nel 1904. Fu assegnato al 3° reggimento artiglieria da costa a Taranto, dove si sposò nel 1908. Nel 1909 fu trasferito a Torino al 12° reggimento artiglieria da campagna e negli anni 1913-14 frequentò la Scuola di Guerra. Consegui' il brevetto di stato maggiore il 17 aprile 1915. Iniziò la prima guerra mondiale come capitano per terminarla come tenente colonnello. Fu destinato al fronte dove ottenne una medaglia d'argento, una Croce al merito di Guerra e una Croce di Guerra francese, ma passò anche un anno allo Stato Maggiore.</p>
+                <p>Nel 1935 avvenne un fatto che potremmo definire determinante per la carriera e la vita stessa di Bellomo, quando era capo dell'Ufficio Difesa dello Stato Maggiore per la Difesa Territoriale. In concomitanza con la campagna d'Etiopia e nel timore di reazioni inglesi in campo aereo, a Bellomo fu affidato il compito di condurre uno studio sulla situazione della difesa contraerei nazionale. Bellomo condusse personalmente lo studio, che durò tre mesi e che si concluse con giudizio assolutamente negativo. Di 130 batterie contrarei solo una trentina erano impiegabili. Il munizionamento, che doveva bastare per sei giornate, bastava per una giornata e mezza. Non vi erano proiettili traccianti. Di 3.100 mitragliatrici solo 120 avevano il treppiede per il tiro contraereo. Questo studio metteva in risalto l'inadeguatezza della difesa contraerei, ma poichè la difesa contraerei era responsabilità della Milizia Contraerea, si volle vedere un attacco di Bellomo, assai tiepido verso il regime, alla Milizia. Vi fu uno scontro violentissimo fra Bellomo ed il luogotenente generale Guidoni, ispettore della Milizia Contraerea. Il fatto ebbe ripercussioni. Si sfiorò il duello fra i due. Ma ormai Bellomo era considerato elemento pericoloso per il regime, dal carattere polemico e inaffidabile.</p>
+                <p>Alla successiva valutazione a generale, i meriti professionali di Bellomo non vennero presi in considerazione. Bellomo fu messo “sottoriga” e non venne promosso. Il generale Baistrocchi, colui che voleva fascistizzare l'Esercito, pare fu determinante per il giudizio. Indignato per l'ingiustizia, fiero di carattere, come ampiamente dimostrerà nei momenti terminali della sua esistenza, rassegnò le dimissioni dall'esercito. Passano gli anni in cui Bellomo si ritira a vita privata, ma nel secondo conflitto mondiale, Bellomo viene richiamato in servizio nel 1941 con il grado di generale di brigata. Viene assegnato a Bari, quale comandante del Presidio militare e promosso generale di divisione. Dopo la caduta del fascismo, il 25 luglio 1943, Bellomo venne nominato Comandante della XII Zona della Milizia, con competenze su Puglia e Lucania.</p>
+              </blockquote>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="sez" id="s3">
+      <div class="sez__riga">
+        <div class="sez__label"><div class="etichetta">Sezione 3</div></div>
+        <div class="sez__corpo">
+          <h3>Processo al generale Nicola Bellomo</h3>
+          <div class="prosa">
+            <p>Il processo si tenne dal 22 al 28 luglio 1945. I verbali del processo sono stati archiviati e resi non disponibili per 50 anni. Fu il figlio Andrea a richiederli, ma senza successo. Trascorsi circa 50 anni, furono richiesti e ottenuti da Nicola, nipote del generale Bellomo. La copia del verbale rappresenta un elemento fondamentale per un'indagine storica. La copia mi è stata inviata per uso personale e non sono quindi autorizzato a diffonderla su un sito aperto. Tuttavia è possibile richiederla rivolgendosi all'indirizzo web dell'Archivio di Stato del Regno Unito.</p>
+            <div class="schede-link">
+              <a class="scheda-link" href="https://discovery.nationalarchives.gov.uk/details/r/C2449326" target="_blank" rel="noopener">
+                <div class="scheda-link__fonte">The National Archives, UK</div>
+                <div class="scheda-link__titolo">Verbali del processo</div>
+                <div class="scheda-link__nota">Non pubblicabili in rete: richiedibili all'archivio.</div>
+              </a>
+              <a class="scheda-link" href="https://www.youtube.com/watch?v=r5HENsXbACQ" target="_blank" rel="noopener">
+                <div class="scheda-link__fonte">BBC, 1989</div>
+                <div class="scheda-link__titolo">Documentario di Ken Kirby</div>
+                <div class="scheda-link__nota">Conferma i dubbi sulla regolarità del processo.</div>
+              </a>
+            </div>
+            <p>Non commento i verbali, ma mi limito a un'interpretazione di questi anche in riferimento alla documentazione disponibile in altri archivi. Le mie considerazioni si riferiscono alle parti del processo che, a mio avviso, non sono corrette dal punto di vista giuridico. La lettura dei libri e dei saggi che saranno esaminati nel paragrafo seguente conferma pienamente le osservazioni che seguono.</p>
+            <ul class="elenco-filetto">
+              <li>Il generale Bellomo fu accusato dell'uccisione di un prigioniero inglese, il capitano Playne, e del ferimento di un altro ufficiale, il tenente Cooke che, il 30 novembre 1941, tentarono di fuggire dal campo di Torre Tresca. L'accusa si basò principalmente sulla testimonianza di Cooke, il quale affermò di essere stato colpito frontalmente dalla stessa arma del generale, una pistola d'ordinanza. Va precisato che varie altre testimonianze e le prove peritali, fra cui le cartelle cliniche della Croce Rossa, hanno dimostrato la falsità di tali accuse: il caricatore è risultato intatto e i prigionieri sono stati colpiti alle spalle, ovvero mentre fuggivano, dalle sentinelle che avevano l'ordine di sparare in caso di fuga, successivamente all'intimazione dell'ALT.</li>
+              <li>Solo il 19 giugno 45, circa un anno e sei mesi dopo l'arresto, fu notificato al generale Bellomo il suo stato di prigioniero di guerra. Il dubbio leggittimo fu che questa inadempienza sia stata finalizzata a fiaccare il morale di Bellomo.</li>
+              <li>Il capitano Carmichael, nominato difensore d'ufficio, non parlava italiano e si rifiutò di produrre le numerose prove a difesa che Bellomo o la sua famiglia gli avevano fornito. L'avvocato Russo Frattasi di Bari, legale di fiducia della famiglia, ottenne di poter assistere al processo in qualità di consulente della difesa. Le Autorità militari inglesi, dopo faticose trattative, concessero l'autorizzazione. Tuttavia l'ingresso in aula dell'avvocato Russo Frattasi fu di fatto impedito dalle guardie militari nonostante la produzione dei documenti di autorizzazione. No comment.</li>
+              <li>Il capitano Perkins della Military Security non presentò alla corte le prove testimoniali e peritali che pure aveva raccolto prima del processo. No comment.</li>
+              <li>La Corte non ordinò di eseguire alcuna indagine sull'origine dei proiettili che uccisero il capitano Playne, ascoltò solo i testimoni di accusa, in particolare il capitano Cook, e si rifiutò di ascoltare significative testimonianze a difesa, fra le quali quella del tenente Jewett che, si era dichiarato disponibile a testimoniare a favore della correttezza e della lealtà del generale Bellomo. No comment.</li>
+            </ul>
+            <p>L'idea che si ebbe dal processo fu che in esso sia stato di fatto esercitato ogni tentativo per sopprimere il diritto alla difesa, e ciò indipendentemente da ogni giudizio di merito sulla sentenza che fu di condanna a morte.</p>
+            <p>Si potrebbe obiettare che le considerazioni sul processo siano condizionate dal fatto che il nipote del generale sia legato a lui da un legame di parentela. Tuttavia, non si può negare che il corrispondente del giornale “Daily Express”, Cyril Ray, abbia manifestato il suo grave sconcerto riguardo alla regolarità del processo, e lo stesso fecero altri giornalisti britannici. Infine, nel documentario della BBC del 1989, a cura di Ken Kirby, sono riportati vari fatti sulla irregolarità del processo. Per esaminare il contenuto del documentario, la BBC si avvalse dell'opera di critici. La trasmissione conferma il telegramma con il quale Cyril Ray esprime il suo sconcerto, condiviso dai colleghi britannici presenti al processo.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="sez" id="s4">
+      <div class="sez__riga">
+        <div class="sez__label"><div class="etichetta">Sezione 4</div></div>
+        <div class="sez__corpo">
+          <h3>Lettura di testi e saggi storici</h3>
+          <div class="prosa">
+            <p>Propongo alcune osservazioni su libri e saggi che hanno trattato il caso Bellomo, facendo riferimento al contesto storico e politico in cui sono stati redatti. La bibliografia è al fondo di questo testo. Le date seguenti sono un riferimento importante per l'interpretazione degli scritti.</p>
+            <ol>
+              <li>Il generale Bellomo fu condannato l'11 settembre 1945.</li>
+              <li>Il referendum che decise la nascita della Repubblica Italiana, evento fondamentale per la storia del nostro Paese, si tenne il 2 giugno 1946.</li>
+              <li>La Costituzione fu approvata il 22 dicembre 1947.</li>
+              <li>La medaglia d'argento per la difesa del porto di Bari fu conferita con Decreto Ministeriale l'11 aprile 1951.</li>
+              <li>La tumulazione, con gli onori del grado di generale, nel Sacrario dei Caduti di Oltremare, avvenne a Bari il 27 novembre 1976.</li>
+            </ol>
+            <p>Queste date indicano che il processo e la condanna si svolsero prima che l'Italia diventasse una Repubblica e si dotasse di una Costituzione. In questa nuova cornice alcuni studiosi di storia e politica hanno scritto libri e saggi. Alcuni punti chiave della documentazione dei paragrafi precedenti sono utili per la ricostruzione storica.</p>
+            <ol>
+              <li>Bellomo rimase sempre fedele al giuramento di militare e non si piegò alle imposizioni della Milizia Fascista quando queste erano in contrasto con il giuramento stesso. Bellomo entrò in rotta di collisione con le alte gerarchie militari del periodo fascista. Dopo la difesa del porto di Bari (9 settembre 1943) fu incaricato di sciogliere la Milizia Fascista. In realtà, Bellomo aveva già dato chiari segni di non voler scendere a compromessi.</li>
+              <li>In seguito al Proclama dell'8 settembre, organizzò, sostenuto anche da alcuni cittadini, la difesa di Bari e del suo porto dall'attacco delle milizie tedesche intenzionate a minare e rendere impraticabile il porto. Non fu l'unico militare a impegnarsi in azioni coerenti con il proclama, ma si ritiene che sia stato l'unico generale a farlo.</li>
+              <li>Lo Stato italiano non ha mai riconosciuto il processo organizzato dalla Corte britannica né l'esecuzione. Infatti, Bellomo ha mantenuto il grado di generale di divisione ed è stato decorato con la medaglia d'argento per la difesa del porto di Bari. La sua tumulazione nel Sacrario dei Caduti d'Oltremare a Bari è avvenuta con gli onori militari riservati al grado di generale. Tuttavia, lo Stato decise di non partecipare al processo. Un intervento sarebbe stato doveroso, considerando che erano state promosse due inchieste, una a livello militare e una a livello della Croce Rossa Internazionale. Entrambe le inchieste riconobbero il comportamento di Bellomo come legittimo.</li>
+            </ol>
+            <p>La lettura dei testi storici terrà conto che:</p>
+            <blockquote class="cit">Bellomo non volle presentare domanda di grazia. Bellomo motivò questa scelta in quanto non si riteneva colpevole e quindi non era disposto a fare un'ammissione di colpa per evitare il plotone di esecuzione.</blockquote>
+            <blockquote class="cit">I testi storici mettono a fuoco l'ipotesi che il processo non sia stato un'iniziativa esclusivamente britannica, ma che vi sia stata una sinergia con iniziative a livello nazionale a sostegno della monarchia e delle alte gerarchie militari compromesse con il fascismo.</blockquote>
+            <p>I testi sono presentati secondo la sequenza storica della pubblicazione e si porranno in evidenza alcuni punti in cui gli autori trattano sia la mancanza di correttezza giuridica, e sia l'ipotesi di un complotto.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="libro">
+        <figure class="libro__cover libro__cover--ombra">
+          <img src="assets/copertine/01-tompkins-italy-betrayed.jpg" alt="Copertina di Italy Betrayed di Peter Tompkins, 1966" loading="lazy">
+          <figcaption class="didascalia">Peter Tompkins<br>Italy Betrayed<br>Simon and Schuster, 1966</figcaption>
+        </figure>
+        <div class="libro__corpo">
+          <h4 class="libro__titolo">Tompkins Peter, <em>Italy Betrayed</em>, Simon and Schuster (1966)</h4>
+          <div class="prosa">
+            <p>Peter Tompkins descrive come dopo l'8 settembre il generale Bellomo non solo liberò la citta di Bari dall'occupazione militare nazista, ma si trovò anche a dover affrontare gli ostacoli posti dal maresciallo Badoglio e da altri soggetti compromessi con il fascismo. A pagina 232 si trova la seguente nota:</p>
+            <blockquote class="cit cit--eng" lang="en">After a long and careful research into the circumstances surrounding the arrest and trial of Bellomo, Zangrandi was able to document how the British court had been tricked by Badoglio and monarchist agents who secreted and falsified evidence in a conspiracy to see that Bellomo was shot. As the only Italian General who on his own initiative fought the germans and held the city till to Allies could arrive he posed a serious treat to the King and Badoglio of revealing to the world the squallor of their own betrayal. The chaplain who attended Bellomo has given an arrowing account of the nobility with which the general met his death.</blockquote>
+            <p class="traduzione"><span class="traduzione__label">Traduzione</span>Dopo un'accurata indagine sulle circostanze dell'arresto e del processo di Bellomo, Zangrandi è riuscito a dimostrare che il tribunale britannico era stato ingannato da Badoglio e da agenti morachici che avevano occultato e falsificato delle prove nell'ambito di un complotto volto a far si' che Bellomo fosse fucilato. Essendo l'unico generale italiano che, di propria iniziativa, combatté contro i tedeschi e difese la città fino all'arrivo degli Alleati, rappresentava una seria minaccia per il re e Badoglio, poiché avrebbe potuto rivelare al mondo lo squallore del loro tradimento. Il cappellano che assistette Bellomo ha fornito una commovente testimonianza della nobiltà con cui il generale affrontò la morte.</p>
+            <p>Preferisco non proporre un'analisi personale dei contenuti questo libro, ma ritengo utile riportare quanto scritto da C.L. Sulzberger del New York Times:</p>
+            <blockquote class="cit cit--eng" lang="en">Peter Tompkins' latest book, Italy Betrayed, is a fascinating analysis of that critical moment in Italian history whan Mussolini was overthrown and the new Rome government secretely negotiated an armistice which led to eventual colliberance with the Allies. Tompkins contends that King Victor Emanuel and Marshal Badoglio sold out their nation in exhange of their own personal safety and prestige and, by leaving Italy in a state of leaderless confusion, allowed the Nazis to occupy and brutalize the country. The book challenges many popular American assumptions concerning World War II and should be read by anyone interested in the great Mediterranean campaign.</blockquote>
+            <p class="traduzione"><span class="traduzione__label">Traduzione</span>L'ultimo libro di Peter Tompkins, Italy Betrayed, è un'affascinante analisi di quel momento cruciale della storia italiana in cui Mussolini fu rovesciato e il nuovo governo di Roma negoziò segretamente un armistizio che portò alla successiva collaborazione con gli Alleati. Tompkins sostiene che re Vittorio Emanuele e il maresciallo Badoglio abbiano tradito la propria nazione in cambio della sicurezza e del prestigio personali, permettendo ai nazisti di occupare e devastare il Paese e lasciando l'Italia in uno stato di confusione e senza guida. Il libro mette in discussione molte delle convinzioni comunemente diffuse negli Stati Uniti riguardo alla seconda guerra mondiale e dovrebbe essere letto da chiunque sia interessato alla campagna del Mediterraneo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="libro">
+        <figure class="libro__cover">
+          <img src="assets/copertine/03-zangrandi-italia-tradita.jpg" alt="Copertina de L'Italia tradita di Ruggero Zangrandi, Mursia, 1971" loading="lazy">
+          <figcaption class="didascalia">Ruggero Zangrandi<br>L'Italia tradita. 8 settembre 1943<br>Mursia, 1971</figcaption>
+        </figure>
+        <div class="libro__corpo">
+          <h4 class="libro__titolo">Zangrandi Ruggero, <em>L'Italia Tradita. 8 Settembre 1943</em>, Mursia Editore (1971), ristampa del 1995</h4>
+          <div class="prosa">
+            <p>Ruggero Zangrandi propone una ricostruzione storica della complessa transizione dal fascismo alla Repubblica. Il testo presenta una sequenza documentata e implacabile delle trame ordite dalle alte cariche militari, le quali temevano che la Repubblica e gli stessi alti comandi militari potessero mettere in luce la loro implicazione in reati commessi dal fascismo, come l'uccisione dei fratelli Rosselli. Per quanto riguarda Bellomo, le prime righe della pagina 219 riportano notizie false diffuse da “radio baionetta”. Siamo nei giorni dell'8 e 9 settembre 1943.</p>
+            <blockquote class="cit">Accadde anche verso le 12, come attesta Zanussi proprio mentre si stava per giungere al largo di Bari, che venne comunicato che Bari risultava occupata dai tedeschi. E' verita' storica che un tentativo tedesco di occupare Bari fu respinto a mezzogiorno del 9 Settembre, dal generale Nicola Bellomo. Qualcuno, dunque, cui non era gradito di scendere in un porto cosi' distante da dove si trovavano gli Alleati (sbarcati, il pomeriggio del 9, a Taranto) dovette trovare il modo di falsificare la notizia.</blockquote>
+            <p>A pagina 235, Zangrandi inserisce una frase. Questa frase ci fa capire come Bellomo si muoveva. Bellomo non nascondeva la realtà.</p>
+            <blockquote class="cit">Il generale Nicola Bellomo, che al momento dell'armistizio si trovava a Bari, attesta in una memoria inedita del giugno 45 (del resto, coerentemente a quanto gli stessi generali Rossi, Roatta e Zanussi scrivono), che “l'8 settembre lo schieramento e lo spirito di tutte le forze italiane erano ispirati allo scopo di contrastare sbarchi anglo-americani”. Quelli stessi, che Badoglio, Ambrosio e Castellano, disperatamente sollecitavano.</blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="libro">
+        <figure class="libro__cover">
+          <img src="assets/copertine/02-di-giovanni-delitto-di-stato.jpg" alt="Copertina di Bellomo un delitto di Stato di Gianni Di Giovanni, Palazzi, 1970" loading="lazy">
+          <figcaption class="didascalia">Gianni Di Giovanni<br>Bellomo un delitto di Stato<br>Palazzi Editore, 1970</figcaption>
+        </figure>
+        <div class="libro__corpo">
+          <h4 class="libro__titolo">Di Giovanni Gianni, <em>Bellomo un Delitto Di Stato</em>, Palazzi Editore (1970)</h4>
+          <div class="prosa">
+            <p>Il libro di Di Giovanni va ben oltre il necessario quadro storico e si pone delle domande specifiche che emergono:</p>
+            <blockquote class="cit">Bellomo era veramente colpevole di questo delitto? Il processo non riusci' ad accertarlo in modo convincente. Apri' invece una serie di interrogativi che ancora oggi appaiono inspiegabili. Perché non furono ascoltati i testi a discarico? Perché venne negato all'imputato il diritto di scegliere un difensore di sua fiducia? Chi era e per conto di chi agiva quel sottufficiale dei carabinieri che impedi' fisicamente all'avvocato di entrare nel processo? Dove era finita l'inchiesta che aveva scagionato Bellomo dall'accusa di omicidio? Perché lo Stato Maggiore e il Comando supremo non sentirono il dovere di intervenire in difesa dell'ufficiale accusato?</blockquote>
+            <p>I quesiti posti da Di Giovanni sono leggibili già nella copertina del libro. Si tratta di una visione che apre nuovi percorsi di comprensione degli eventi del 1943. La copertina contiene considerazioni esplicative dei quesiti proposti. Indubbiamente, il libro di Di Giovanni è diventato un riferimento fondamentale per gli autori di libri e saggi dedicati allo studio della vicenda del generale Bellomo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="libro">
+        <figure class="libro__cover">
+          <img src="assets/copertine/06-corvaja-storia-illustrata.jpg" alt="Pagina di Storia Illustrata n. 331 con il saggio di Santi Corvaja, 1985" loading="lazy">
+          <figcaption class="didascalia">Santi Corvaja<br>Una medaglia d'oro al generale Bellomo<br>Storia Illustrata n. 331, giugno 1985</figcaption>
+        </figure>
+        <div class="libro__corpo">
+          <h4 class="libro__titolo">Corvaja Santi, <em>Una medaglia d'oro al Generale Bellomo</em>, Storia Illustrata, n. 331, giugno 1985, pp. 47-56</h4>
+          <div class="prosa">
+            <p>Il saggio di Santi Corvaja presenta un quadro molto preciso della vicenda e del periodo storico in cui si svolse, dal punto di vista politico e cittadino. La sintesi è nel titolo:</p>
+            <blockquote class="cit">Era un ufficiale severo, che fece fino in fondo il proprio dovere. Innocente, fu condannato, ma in Italia giuridicamente la sentenza non è valida.</blockquote>
+            <p>Santi Corvaja chiude il suo saggio con le seguenti parole:</p>
+            <blockquote class="cit">Nel volume dedicato agli ufficiali dello Stato Maggiore caduti in guerra (1865) a proposito del generale Bellomo si dice “Con serenità dei forti affrontò il plotone di esecuzione a Napoli (Nisida) l'11 settembre 1945, gridando “Viva l'Italia”. E' proprio la motivazione preparata per la medaglia d'oro alla Memoria di cui e' creditore da quarant'anni non solo il generale Bellomo, ma l'Italia eterna.</blockquote>
+            <p>Come spiega Fiorella Bianco a pagina 164 del suo libro, Nicola Bellomo scrisse a G. Spadolini il 27 maggio 1985, a G. Andreotti il 10 giugno 1985, e a G. Amato il 27 dicembre 1985 (che rispose). Infine, il seguito fu:</p>
+            <blockquote class="cit">sono spiacente di doverle comunicare [...] che detta richiesta non può trovare accorglimento ostandovi le disposizioni di legge che hanno posto termini, da tempo scaduti, per la presentazione [...].</blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="libro">
+        <div class="libro__copertine">
+          <figure>
+            <img src="assets/copertine/04-bianco-caso-bellomo-1995.jpg" alt="Copertina di Il Caso Bellomo di Fiorella Bianco, Mursia, 1995" loading="lazy">
+            <figcaption class="didascalia">Prima edizione<br>Mursia, 1995</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/copertine/05-bianco-ristampa-2026.jpg" alt="Copertina della ristampa 2026 di Il Caso Bellomo" loading="lazy">
+            <figcaption class="didascalia">Ristampa, 2026</figcaption>
+          </figure>
+        </div>
+        <div class="libro__corpo">
+          <h4 class="libro__titolo">Bianco Fiorella, <em>Il Caso Bellomo</em>, Mursia Editore (1995), ristampa del 2026</h4>
+          <div class="prosa">
+            <p>Fiorella Bianco, moglie di Nicola (nipote del generale Bellomo) ha potuto avvalersi di tre fonti non disponibili prima del 1993: uno scritto di Barbara Bellomo (figlia del generale Bellomo), la lettura del rapporto tecnico della commissione d'inchiesta promossa dallo Stato Maggiore dopo i fatti di Torre Tresca, e il verbale del processo.</p>
+            <p>Lo scritto di Barbara fu trasmesso dal marito Mario Marino al nipote Nicola Bellomo con ampia libertà di diffusione. Barbara era deceduta. Barbara Bellomo descrive con uno stile molto coinvolgente i pregi umani del generale Bellomo, profondamente legato all'affetto per la famiglia e alla gente della sua città natale, e il suo rigore militare unito al rifiuto dei compromessi.</p>
+            <p>In particolare, nel libro di FB vengono esaminati i verbali dell'inchiesta svolta dal Ministero italiano e quelli del processo della Corte inglese. La visione dei documenti della prima inchiesta è stata autorizzata dal generale Tambuzzo, alla presenza di un ufficiale con il grado di capitano, e vi hanno partecipato Nicola (nipote) e Fiorella.</p>
+            <p>Infine, nel 1995, gli Archivi di Stato del Regno Unito hanno reso pubblici i verbali del processo. Seguono alcuni riferimenti ai contenuti del libro.</p>
+            <p>La prefazione offre una sintesi del contenuto del libro e delle motivazioni storiche che ne hanno suggerito la stesura. La prefazione fa anche riferimento ai libri precedentemente pubblicati dagli autori Giovanni Di Giovanni e Oreste Del Buono. La prefazione sottolinea che entrambi gli autori hanno evidenziato le ombre sulla correttezza del processo.</p>
+            <p>Le pagine 9-12 presentano il quadro storico nel quale si è svolta la vicenda. FB ritiene importante anche fornire una descrizione del Generale Bellomo, in particolare del suo carattere, del suo rigore morale, del suo coraggio militare e della sua difficoltà a mediare. Questa difficoltà, unita al suo rigore etico, lo portò ad avere forti contrasti con il fascismo.</p>
+            <p>Le pagine 42-47 presentano una ricostruzione della situazione militare che si verificò nella zona di Bari dopo l'8 settembre 1943, dallo sbandamento generale alle azioni di organizzazione e di natura militare messe in atto dal generale responsabile della zona. FB fa riferimento a due relazioni del generale, definite Relazione I e Relazione II. Questa parte del libro si concentra esclusivamente sugli episodi relativi alla gestione della piazza militare e alla difesa di Bari. Un aspetto interessante è la precisione con cui il Generale Bellomo teneva informato lo Stato Maggiore. Due particolari vanno segnalati:</p>
+            <p>(i) Emergono i contrasti profondi con le altre gerarchie militari, in particolare con il Generale Lerici (pagine 63-70).</p>
+            <p>(ii) Il lavoro del Generale Bellomo viene apprezzato, con ringraziamenti, dal capitano Campbell, comandante della base navale di Bari (pagine 71-73), ma poi Bellomo viene arrestato con un pretesto (pagine 79-80).</p>
+            <p>Il capitolo III affronta un tema chiave della vicenda. In particolare, si cerca di ricostruire le possibili linee di un complotto che avrebbe coinvolto gli inglesi e una parte delle alte gerarchie militari italiane. A questo proposito, si segnalano le seguenti pagine: pagine 93-98: rapporti con i generali Lerici e Caruso; pagine 98-101: rapporti con i miliziani; pagine 112-118: ruolo dei generali. Un particolare importante è la sparizione dei documenti dell'inchiesta che scagionavano il Generale Bellomo (si vedano in particolare le pagine 112 e seguenti).</p>
+            <p>Il capitolo IV tratta il processo e la condanna. In particolare, l'analisi dei documenti del processo ha messo in evidenza la falsità di alcune testimonianze.</p>
+            <p>Le pagine 122-134 descrivono le condizioni di prigionia, indubbiamente intese a fiaccare il morale del generale Bellomo. Le pagine 137-153 trattano l'analisi dei verbali e il confronto con i documenti visionati negli archivi del Ministero della Difesa, che indicano la manipolazione dei testimoni ammessi dall'accusa. Le pagine 156-165 trattano un argomento chiave: la scomparsa dei documenti relativi alle indagini promosse dallo Stato Maggiore Militare. Il libro fa anche i nomi dei generali che erano a conoscenza dell'esistenza di questi documenti.</p>
+            <p>Il capitolo V, pagine 171-197, analizza il ruolo dei governi e degli stati maggiori, i cui intrecci sono molto complessi e avvalorano l'ipotesi di un complotto. Sull'ipotesi del complotto, Fiorella Bianco scrive:</p>
+            <blockquote class="cit">La tesi del complotto è comunque quella che la maggior parte dei giornalisti e critici ha accreditato anche recentemente.</blockquote>
+            <p>Il “recentemente” di Fiorella Bianco si riferisce all'articolo di Oreste del Buono “Fuoco inglese per il generale”, pubblicato su “Tuttolibri”, periodico de La Stampa, anno VIII, numero 873, ottobre 1993.</p>
+            <p>La documentazione relativa all'arresto e alla detenzione dimostra che non è stato rispettato l'Habeas Corpus Act. La documentazione relativa al processo non rispetta i requisiti necessari per la correttezza giuridica. Come si può giudicare senza esaminare i testimoni e gli atti, anche peritali, a sostegno dell'imputato? Non mi dilungo oltre, ma segnalo l'ultimo paragrafo del libro con il titolo “I veri colpevoli” alle pagine 195-197.</p>
+            <blockquote class="cit">Ironia della sorte, proprio un uomo come Bellomo, che non aveva mai fatto politica nel senso stretto del termine, si ritrovò al centro di un caso politico. Non si può condividere l'argomentazione di Richard Lamb secondo cui, se Bellomo avesse firmato la domanda di grazia da rivolgere ad Alexander, sarebbe stato graziato e, anzi, dopo pochi anni sarebbe anche uscito di prigione. L'opinione di Lamb sembra un tentativo di addossare la colpa della sua morte al generale stesso e al suo carattere orgoglioso.</blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="libro">
+        <figure class="libro__cover">
+          <img src="assets/copertine/07-pirro-crimini-di-guerra.jpg" alt="Copertina di I crimini di guerra dopo l'8 settembre 1943 di Federico Pirro, Palomar" loading="lazy">
+          <figcaption class="didascalia">Federico Pirro<br>I crimini di guerra dopo l'8 settembre 1943<br>Palomar, 2004 - ristampa 2024</figcaption>
+        </figure>
+        <div class="libro__corpo">
+          <h4 class="libro__titolo">Pirro Federico, <em>I crimini di guerra dopo l'8 settembre 1943. Il Generale Bellomo liberò Bari dai tedeschi fu fucilato dagli inglesi</em>, Palomar Editore, prima edizione (2004), ristampa 2024</h4>
+          <div class="prosa">
+            <p>Il giornalista e scrittore Federico Pirro è deceduto il 14 giugno 2019. E' stato autore di libri storici su vicende che hanno segnato la vita dell'Italia e dell'Europa nella prima metà del secolo scorso. Uno di questi è dedicato al generale Bellomo. Nelle prime pagine del libro si legge:</p>
+            <blockquote class="cit">Il 9 settembre 1943 Bari fu occupata dalle truppe naziste che dal Salento stavano risalendo la penisola con il compito di distruggere quanto più possibile e lasciarsi dietro “terra bruciata”. Nel capoluogo pugliese, dopo aver tentato di occupare gli Uffici Centrali della Posta, si asserragliarono nel porto e presero ad affondare mezzi ed abbattere strutture. Nonstante l'ambiguità del proclama di Badoglio che nel comunicare l'avvenuta firma dell'armistizio, non forniva direttive specifiche sull'atteggiamento nei confronti dei tedeschi, il Generale Nicola Bellomo, Comandante del Presidio Militare, non ebbe un attimo di esitazione nell'organizzare quello che può, senza alcun dubbio, essere definito il primo episodio di Resistenza! [...] Bellomo nel suo rapporto denunciò le tante fughe e le vigliaccherie degli Alti Comandi, ma la vendetta lo colpi' strappandogli di dosso le vesti di liberatore di Bari per sostituirle con quelle di “criminale di guerra”. [...] sentenza sicuramente scritta altrove, come si evincerà nelle pagine che seguono, e zelantemente inflitta.</blockquote>
+            <p>Dopo l'introduzione, Pirro descrive il processo mettendo in evidenza che si è trattato di una messa in scena progettata in anticipo senza lasciare spazio alla difesa. Il secondo punto è dedicato alle ultime ore del generale, in cui si evidenzia il tentativo di forzare una richiesta di ottenere una grazia, richiesta che generale rifiuta con motivazioni esplicite (siamo ben lontani dalle congetture di Lamb). Gli ultimi due punti sono collegati tra loro. La congiura contro Bellomo mirava a eliminare un soggetto che si sarebbe autorevolmente contrapposto alle strategie di salvezza di chi aveva commesso veri reati di guerra, in alcuni casi di estrema gravità.</p>
+            <p>Il libro va interpretato nel suo complesso e, come fa notare l'autore, va riferito al contesto storico. Federico Pirro si sofferma su quesiti analoghi a quelli sollevati da Di Giovanni. Descrive con precisione gli eventi non contestabili, lasciando al lettore il compito di trarre le proprie conclusioni.</p>
+            <p>Ulteriore riferimento è reperibile al sito dell'<a href="https://www.istitutodelnastroazzurro.org" target="_blank" rel="noopener">Istituto del Nastro Azzurro</a> (18 dicembre 2020).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="libro">
+        <figure class="libro__cover">
+          <img src="assets/copertine/08-martino-1943-guerra-e-liberazione.jpg" alt="Copertina di 1943 guerra e liberazione, Radici Future, 2023" loading="lazy">
+          <figcaption class="didascalia">Martino, Trizio, Doria<br>1943 guerra e liberazione<br>Edizioni Radici Future, 2023</figcaption>
+        </figure>
+        <div class="libro__corpo">
+          <h4 class="libro__titolo">Martino Pasquale, Trizio Pasquale B. e Doria Pasquale, <em>1943 guerra e liberazione</em>, Edizioni Radici Future (2023)</h4>
+          <div class="prosa">
+            <blockquote class="cit">Il libro “1943 guerra e liberazione” presenta un quadro della storia, dei militari e della popolazione civile dell'anno 1943, segnato dal declino e dall'inizio della liberazione dal fascismo. Si parla quindi del governo Badoglio, della dichiarazione dell'8 settembre e dei successivi sussulti di violenza del fascismo, contrastato dalla lotta partigiana. Il libro propone una ricostruzione storica documentata e rigorosa. In questo contesto emerge il ruolo della popolazione della città di Bari e della regione Puglia riferita al contesto nazionale. Si evince una città impegnata e attiva, in cui gli intellettuali dialogano con la popolazione e si uniscono per contrastare gli ultimi sussulti del fascismo.</blockquote>
+            <p>Mi soffermerò sul contributo del libro al generale Bellomo. Il libro affronta vari aspetti del suo ruolo militare e mette chiaramente in evidenza come, il 9 settembre, Bellomo decise di contrastare le truppe tedesche intenzionate a far saltare il porto di Bari.</p>
+            <p>Bellomo aveva risorse militari insufficienti e decise di rivolgersi alla popolazione. In particolare, si rivolse anche ai ragazzi e ai giovani dei quartieri adiacenti al porto, ovvero della Bari vecchia. La popolazione lo segui', i tedeschi furono costretti a lasciare la città. La frase, che ha assunto un valore storico indimenticabile, è:</p>
+            <p class="frase-storica">“Difendete le vostre case.”</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="libro">
+        <figure class="libro__cover">
+          <!-- Testata provvisoria: sostituire con il file del logo ufficiale di Patria indipendente. -->
+          <a class="testata-pi" href="https://www.patriaindipendente.it/servizi/lo-strano-caso-del-generale-bellomo-che-dopo-larmistizio-combatte-i-tedeschi-e-fu-fucilato-dagli-inglesi/" target="_blank" rel="noopener">
+            <div class="testata-pi__nome">Patria<br>indipendente</div>
+            <div class="testata-pi__filetto"></div>
+            <div class="testata-pi__nota">Periodico dell'ANPI<br>2026</div>
+          </a>
+          <figcaption class="didascalia">Testata provvisoria: sostituire con il file del logo ufficiale di Patria indipendente.</figcaption>
+        </figure>
+        <div class="libro__corpo">
+          <h4 class="libro__titolo">Martino Pasquale, <em>Lo strano caso del generale Bellomo, che dopo l'armistizio combatté i tedeschi e fu fucilato. Dagli inglesi</em>, Patria Indipendente (2026)</h4>
+          <div class="prosa">
+            <p>Il saggio di Pasquale Martino tratta il caso del generale Bellomo, evidenziando i contrasti che il generale ebbe con la milizia fascista, i meriti al valore militare e la coerenza con la dichiarazione dell'8 settembre, che comunque era ambigua riguardo all'impegno militare di difesa del territorio. Il contesto storico è quello del 1943, anno trattato nel libro “1943 guerra e liberazione” di Martino, Trizio e Doria.</p>
+            <p>Il riferimento storico è fondamentale in quanto il 1943 fu un anno caratterizzato da comportamenti e mutazioni improvvisi, ma anche da individualismi ambigui e cinicamente egoisti. Ogni dettaglio di questo saggio è importante, la sintesi del contenuto si trova nelle prime righe del testo.</p>
+            <blockquote class="cit">L'11 settembre 1945, unico alto ufficiale italiano, venne condannato da un tribulale britannico e giustiziato per crimini di guerra. Non una voce si levò a sua difesa, nonostante il 9 settembre 1943 avesse salvato lo strategico porto di Bari dalla distruzione tedesca, senza aver ricevuto ordini superiori e sebbene esulasse dalle competenze assegnate. Durante il Primo conflitto sembra abbia evitato la corte marziale a Giuseppe Di Vittorio, che aveva abbandonato il reparto a Caporetto. E nel successivo era stato durissimo con i fascisti impenitenti. Una vicenda paradigmatica di un tempo di sconvolgimenti in cui era possibile compiere improvvisamente gesti che oggi si definirebbero eroici e, d'altra parte, restare impigliati nell'intreccio di episodi oscuri in cui l'errore o l'ingenuità confinano con una colpa e prestano l'occasione opportuna all'intrigo e la vendetta.</blockquote>
+            <p>Il saggio è il più recente fra quelli esaminati nei testi a supporto dei contenuti del sito. Anche questo testo è fortemente critico nei confronti della correttezza del processo ed analizza la presenza di trame volte a emarginare (sopprimere) la figura del generale che avrebbe potuto portare alla luce le prepotenze e i reati del fascismo. Di seguito, indico alcuni punti chiave del saggio di Martino.</p>
+            <blockquote class="cit">Il generale Caruso paleserà una velenosa acrimonia nei confronti del collega, definendo l'azione di Bellomo al porto come “una confusa incursione”, “sconclusionata e inutile azione”.</blockquote>
+            <blockquote class="cit">Il generale Lerici, che in una intervista rilasciata parecchi anni dopo affermerà che l'8 settembre i tedeschi avevano già deciso di ritirarsi da Bari, e perciò “tanto valeva lasciarli andare”.</blockquote>
+            <p>Questa affermazione è inquietante. Lerici non poteva ignorare che i tedeschi avevano già iniziato ad attaccare le strutture strategiche della città. Inoltre, durante la loro ritirata dedicarono più giorni all'occupazione e alla devastazione di Barletta con saccheggi e rappresaglie.</p>
+            <blockquote class="cit">Sebbene manchino prove documentali è verosimile che Bellomo sia stato vittima di intrighi da parte italiana. Ne era convinto il generale Puntoni, aiutante di campo del re, che guardando da un osservatorio privilegiato annotava nel suo diario: “Le vendette politiche continuano con l'appoggio delle autorità alleate”, e puntualizzava che Bellomo era stato arrestato “in seguito a delazioni”.</blockquote>
+            <p>È vero, inoltre, che nessun documento indica un intervento purchessia degli alti gradi dell'esercito per mitigare la sorte dell'unico ufficiele italiano che veniva trascinato sul banco degli imputati.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="sez" id="s5">
+      <div class="sez__riga">
+        <div class="sez__label"><div class="etichetta">Sezione 5</div></div>
+        <div class="sez__corpo">
+          <h3>Ulteriori fonti di informazione</h3>
+          <div class="prosa">
+            <p>I paragrafi precedenti includono solo una selezione dei documenti disponibili. Ulteriori informazioni possono essere reperite sulla base delle indicazioni di seguito.</p>
+            <p><strong>Il materiale depositato nell'Archivio Storico di Torino.</strong> I documenti depositati sono: copia dello stato di servizio del generale Nicola Bellomo; carteggio con il Vaticano in merito alla costituzione dell'ordine dei cappellani militari; documenti relativi allo scioglimento della milizia fascista e alla difesa del porto di Bari nel settembre-ottobre 1943; descrizione dei fatti di Torre Tresca; documenti relativi alle illegalità processuali; articolo del giurista G. Primo Aulenti su “Legge e Giustizia”, giugno 1964; articolo di Federico Pirro su “La Gazzetta del Mezzogiorno” del 21 dicembre 1976.</p>
+            <p><strong>Memoriale di autodifesa redatto dal generale Bellomo durante la prigionia.</strong> Il memoriale fu poi pubblicato dall'editore Mursia con un'introduzione del prof. Quazza. Il libro è indicato nella bibliografia che segue, ma non è commentato in questo documento introduttivo.</p>
+            <p><strong>Articoli di giornali quotidiani.</strong> Una lista di molti titoli pubblicati da quotidiani e periodici dal 1945 al 1993 è presentata nelle pagine 199-207 del libro di FB. Il tema dei primi articoli si rivolge prevalentemente alla gestione giuridicamente scorretta del processo e sui meriti del generale Bellomo. In accordo con Cyril Ray, del Daily Express, indicano la necessità di rifare il processo. Successivamente gli articoli iniziano a trattare il problema della possibile esistenza di un complotto. In effetti, è poco credibile che la Corte inglese, pur di perpetrare una vendetta britannica, si macchi in un processo che rimarrà alla storia. Forse speravano in una domanda di grazia, secondo le idee di Lamb, ma avevano sottovalutato che fra alcuni soldati e ufficiali italiani esiste anche l'orgoglio.</p>
+            <p>Successivamente, sono stati pubblicati vari articoli anche molto recenti. Questi riprendono le ipotesi di vendetta britannica, del complotto che ha portato al processo e della sua scorrettezza giuridica.</p>
+            <p><strong>Silvio Bertoldi, “Bellomo, l'eroe fucilato per vendetta”, Corriere della Sera, 6 gennaio 1996.</strong> L'articolo descrive la coraggiosa e strategicamente valida difesa della città di Bari e del porto. Il generale era in prima linea, fu ferito due volte e accettò il ricovero solo quando fu certo della resa delle truppe tedesche. Quindi descrive anche le condizioni “ignobili” di prigionia cui egli fu costretto. Infine, descrive alcuni punti chiave di un processo che non ha consentito il diritto alla difesa. L'autore di questo articolo indica con chiarezza il clima di riconoscimento della popolazione contrastato da rancori di alti ufficiali verso Bellomo.</p>
+            <p><strong>Vito Antonio Leuzzi, “Valoroso e incompreso”, La Gazzetta del Mezzogiorno, 11 settembre 2025.</strong> Propone una sintesi della storia dall'8 settembre alla fucilazione del generale. Leuzzi riprende l'ipotesi del complotto nato dagli ultimi rigurgiti del fascismo.</p>
+            <blockquote class="cit">Assai discutibile fu il comportamento dei vertici militari italiani, dopo l'arresto del generale. Giovanni Messe rinviò la decisione di un riconoscimento ufficiale a Bellomo, per la resistenza antitedesca. [...] Il memoriale scritto all'indomani della resistenza antitedesca (11 settembre 1943) fu alla base della reazione di diversi alti ufficiali della milizia accusati da Bellomo di “inerzia” nei momenti cruciali della difesa del porto di Bari.</blockquote>
+            <p>Leuzzi osserva che il Tribunale militare inglese si rifiutò di acquisire questo memoriale.</p>
+            <p><strong>Nicola Signorile, “Chi era il Generale Bellomo: fu condannato a morte per la liberazione di Bari”, La Repubblica, 9 settembre 2025.</strong> Questo articolo prima riprende l'ipotesi del complotto:</p>
+            <blockquote class="cit">Per un caso che si carica di forte simbolismo, Bellomo scrive il suo “testamento morale” il 28 luglio 1945. Proprio il giorno in cui cadeva il secondo anniversario della strage di via Niccolò dell'Arca, a Bari: 20 antifascisti (e centinaia i feriti) caddero sotto il piombo sparato dai militari badogliani e dai cecchini fascisti. Due date, collegate da un'ulteriore singolare coincidenza. La sparatoria contro gli antifascisti fu “autorizzata” dal generale Mario Roatta che con la famigerata circolare emanata due giorni prima vietava ogni manifestazione per la caduta del governo Mussolini e ordinava all'esercito e alla polizia di sparare a vista, senza preavviso. [...] Nella tragedia dell'esercito italiano sbandato all'indomani dell'armistizio di Cassibile, Roatta e Bellomo rappresentano i due tipi opposti del militare italiano. Non stupisce allora che Roatta avesse inviato a Bari il generale Roberto Lerici con il compito di “controllare” e poi emarginare Bellomo.</blockquote>
+            <p>L'autore dell'articolo sostiene, con decisione, la tesi del complotto. Successivamente, lega la coerenza di Bellomo alla città di Bari.</p>
+            <blockquote class="cit">Si accorge dell'ostilità Bellomo già in quel fatidico 9 settembre 1943. Nella battaglia di Bari, il primo grande atto della guerra di Liberazione, caddero Walter Fachin, Domenico Leone, Michele Chicchi, Giuseppe Barnaba, Pasquale Carella e Luigi Partipilo. Certo non poteva incontrare il favore dei vertici dell'esercito, chiusi al sicuro nelle caserme, la decisione di armare la popolazione, di consegnare armi e munizioni agli operai del porto e ai ragazzini di Bari vecchia, come il 15enne Michele Romito che con una bomba a mano fermò una colonna tedesca ai piedi della Muraglia. [...] gli Alleati fanno prigioniero l'uomo che aveva garantito l'ordine pubblico facendo leva quasi esclusivamente sul consenso popolare, sulla fiducia riposta dalla città in un “figlio di Bari vecchia”. Nicola Bellomo, infatti, nasce il 2 febbraio 1881 in strada Vallisa. È uno dei sette figli di un marinaio e armatore di pescherecci, Andrea.</blockquote>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="sez" id="s6">
+      <div class="sez__riga">
+        <div class="sez__label"><div class="etichetta">Sezione 6</div></div>
+        <div class="sez__corpo">
+          <h3>Riflessioni</h3>
+          <div class="prosa">
+            <p>Alcune riflessioni personali a conclusione di questo documento. Sulla base di quanto documentato e tenendo conto che i libri e saggi esaminati sono stati redatti da storici eccellenti, mi sento di poter affermare che l'analisi dei verbali del processo, le documentazioni prodotte dai giornalisti britannici Cyril Ray (giornalista del Daily Express) e Ken Kirby (regista e produttore di documentari), e gli studi di storici autorevoli convergono nell'affermare che l'arresto, la lunga detenzione e la conduzione del processo hanno leso il diritto alla difesa. Come affermato da altri, il processo è stato condotto come se la sentenza fosse stata scritta prima ancora di cominciare.</p>
+            <p>Per quanto riguarda la questione del complotto, abbiamo già esaminato il tema negli scritti commentati nel paragrafo precedente del libro Italy Betrayed, pubblicato a New York nel 1966, e nel saggio di Pasquale Martino, pubblicato nel 2026. In ogni caso, mi sento di aggiungere quanto segue:</p>
+            <blockquote class="cit">Molti indizi fanno pensare che ci sia stato un complotto per spingere i Comandi Militari Inglesi a vendicarsi. Le informazioni pervenute erano finalizzate a questo scopo e, pertanto, incomplete e fuorvianti. Tuttavia, su questo punto, per quanto importante, non è possibile andare oltre il lavoro documentato nei libri e nei saggi trattati in questo documento. Di certo è molto difficile pensare che non vi sia stato un complotto. Ritengo, tuttavia, che sia fondamentale restituire alla città di Bari e all'Italia la memoria di quanto avvenne il 9 settembre 1943.</blockquote>
+            <blockquote class="cit">Il 9 settembre 1943 fu condotta un'azione di difesa della città, della popolazione, delle loro case, e delle strutture strategiche della città, in particolare del porto. Questa azione fu decisa, organizzata e condotta con successo dal generale Nicola Bellomo. In questa azione, i cittadini di Bari furono determinanti per ottenere la resa dei militari tedeschi. La guida di un militare esperto fu recepita e messa in pratica fra le vie di Bari vecchia.</blockquote>
+            <p>Per meglio comprendere il ruolo della città di Bari indico l'intervista al giornalista Nicola Signorile “La Resistenza Antifascista a Bari”, podcast “Poetry of Resistance”. L'intervista è disponibile con sottotitoli in inglese su <a href="https://www.youtube.com/watch?v=KCCVQkROzGM" target="_blank" rel="noopener">YouTube</a>.</p>
+            <p>Questi ragionamenti motivano le finalità del sito indicate all'inizio di questo documento.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="sez">
+      <div class="sez__riga">
+        <div class="sez__label"><div class="etichetta">Ringraziamenti</div></div>
+        <div class="sez__corpo prosa">
+          <p>Desidero ringraziare:</p>
+          <ul>
+            <li>Gli autori dei libri e saggi, purtroppo alcuni alla memoria.</li>
+            <li>L'ANPI, in quanto Associazione Nazionale Partigiani d'Italia, ha sempre seguito la storia di Bellomo, anche per la sua attività da militare con i partigiani della città di Bari.</li>
+            <li>Antonio Decaro, Presidente della Regione Puglia, già Sindaco di Bari, che si è impegnato a mantenere viva la memoria del generale Bellomo nella sua città, dove una via porta il suo nome. Gaetano Manfredi, Sindaco di Napoli, che ha fatto apporre una lapide in memoria della prima sepoltura del generale a Nisida.</li>
+            <li>Cyril Ray (giornalista del Daily Express) e Ken Kirby (regista e produttore di documentari).</li>
+            <li>Il generale Giorgio Blais, che ha inserito la descrizione-memoria del “Caso Bellomo” nel sito “Dai Gruppi di Combattimento al nuovo Esercito Italiano”.</li>
+            <li>Pasquale Martino (storico) per indicazioni e suggerimenti storici.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="sezione sezione--scura saggio" id="saggio">
+  <div class="wrap">
+    <div class="cols">
+      <div class="cols__label">
+        <div class="saggio__eyebrow">Patria indipendente<br>2026</div>
+      </div>
+      <div class="cols__body">
+        <h2>Il saggio di Pasquale Martino</h2>
+        <p class="saggio__testo">“Lo strano caso del generale Bellomo, che dopo l'armistizio combatté i tedeschi e fu fucilato. Dagli inglesi” ricostruisce gli aspetti chiave della vicenda e pone quesiti sui quali è doveroso riflettere, e ai quali è possibile rispondere attraverso ricerche documentate. Il testo integrale è riprodotto in questo sito con l'autorizzazione dell'autore e della rivista.</p>
+        <div class="saggio__azioni">
+          <a class="btn btn--pieno" href="assets/pdf/saggio-martino-patria-indipendente.pdf" target="_blank" rel="noopener">
+            <span class="btn__label">PDF</span>
+            <span class="btn__testo">Scarica il saggio integrale</span>
+          </a>
+          <a class="btn btn--filo" href="https://www.patriaindipendente.it/servizi/lo-strano-caso-del-generale-bellomo-che-dopo-larmistizio-combatte-i-tedeschi-e-fu-fucilato-dagli-inglesi/" target="_blank" rel="noopener">
+            <span class="btn__label">Fonte</span>
+            <span class="btn__testo">Leggi su Patria indipendente</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione sezione--fascia bibliografia" id="bibliografia">
+  <div class="wrap">
+    <div class="cols">
+      <div class="cols__label">
+        <h2 class="titolo-etichetta">Bibliografia</h2>
+      </div>
+      <div class="cols__body">
+        <ol class="biblio">
+          <li>Tompkins Peter, <em>Italy Betrayed</em>, Simon and Schuster, New York (1966).</li>
+          <li>Di Giovanni Gianni, <em>Bellomo un Delitto Di Stato</em>, Palazzi Editore (1970).</li>
+          <li>Zangrandi Ruggero, <em>L'Italia Tradita. 8 Settembre 1943</em>, Mursia Editore (1971).</li>
+          <li>Bellomo Nicola (generale), <em>Memoriale sull'armistizio e autodifesa</em>, introduzione di Guido Quazza, Mursia Editore (1978).</li>
+          <li>Corvaja Santi, <em>Una medaglia d'oro al Generale Bellomo</em>, Storia Illustrata, n. 331, giugno 1985, pp. 47-56.</li>
+          <li>Bianco Fiorella, <em>Il Caso Bellomo</em>, Mursia Editore (1995), ristampa (2026).</li>
+          <li>Pirro Federico, <em>I crimini di guerra dopo l'8 settembre 1943. Il Generale Bellomo liberò Bari dai tedeschi fu fucilato dagli inglesi</em>, Palomar Editore (2004), ristampa con introduzione dell'editore (2024).</li>
+          <li>Martino Pasquale, Trizio Pasquale B. e Doria Pasquale, <em>1943 guerra e liberazione</em>, Edizioni Radici Future (2023).</li>
+          <li>Martino Pasquale, <em>Lo strano caso del generale Bellomo, che dopo l'armistizio combatté i tedeschi e fu fucilato. Dagli inglesi</em>, Patria Indipendente (2026). <a href="https://www.patriaindipendente.it/servizi/lo-strano-caso-del-generale-bellomo-che-dopo-larmistizio-combatte-i-tedeschi-e-fu-fucilato-dagli-inglesi/" target="_blank" rel="noopener">Online</a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__principale">
+      <div class="footer__label">Responsabile dei contenuti</div>
+      <p>Nicola Bellomo, nipote del generale Bellomo, professore emerito del Politecnico di Torino - <a href="https://www.modelinglife.io/documents/Bellomo-cv.pdf" target="_blank" rel="noopener">curriculum vitae</a></p>
+    </div>
+    <div class="footer__note">
+      <p>I verbali del processo non sono pubblicabili: sono richiedibili all'Archivio di Stato del Regno Unito.</p>
+      <p>Il saggio di Pasquale Martino è riprodotto con autorizzazione.</p>
+      <p class="footer__anno">© 2026</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

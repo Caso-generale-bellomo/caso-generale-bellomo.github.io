@@ -1,0 +1,18 @@
+# sistema
+.DS_Store
+Thumbs.db
+
+# materiali riservati: MAI nel repo (verbali del processo, libro completo)
+*erbale*
+*Verbale*
+Livre*
+*.bmp
+
+# lavorazione
+*.psd
+*.ai
+node_modules/
+
+# materiali di lavoro: restano in locale, il repo pubblico ospita solo il sito
+docs/
+contenuti/

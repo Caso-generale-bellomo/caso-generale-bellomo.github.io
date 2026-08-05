@@ -1,0 +1,908 @@
+/* ==========================================================================
+   Generale Nicola Bellomo - foglio di stile unico
+   Sito statico monopagina. Nessun framework, nessun build step.
+   Palette, tipografia e spaziature dal design di riferimento
+   in docs/design-handoff/ ("Home Bellomo").
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Token
+   -------------------------------------------------------------------------- */
+:root {
+  /* carta */
+  --carta: #f1ede4;
+  --carta-fascia: #ece7db;
+  --carta-box: #f6f3ec;
+  --carta-hover: #e3dcca;
+  --mappa-fondo: #e6e1d5;
+
+  /* inchiostro */
+  --inchiostro: #17140f;
+  --inchiostro-90: rgba(23, 20, 15, .9);
+  --inchiostro-78: rgba(23, 20, 15, .78);
+  --inchiostro-72: rgba(23, 20, 15, .72);
+  --inchiostro-65: rgba(23, 20, 15, .65);
+  --inchiostro-60: rgba(23, 20, 15, .6);
+  --inchiostro-55: rgba(23, 20, 15, .55);
+  --inchiostro-45: rgba(23, 20, 15, .45);
+
+  /* filetti */
+  --filetto: rgba(23, 20, 15, .14);
+  --filetto-medio: rgba(23, 20, 15, .16);
+  --filetto-forte: rgba(23, 20, 15, .18);
+
+  /* accento */
+  --accento: #8f2f1c;
+  --accento-hover: #5f1e11;
+  --accento-chiaro: #e0855f;
+
+  /* fondo invertito */
+  --scuro: #17140f;
+  --scuro-testo: #f1ede4;
+  --scuro-testo-82: rgba(241, 237, 228, .82);
+
+  /* tipografia */
+  --serif: "Source Serif 4", Georgia, serif;
+  --sans: Archivo, system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* misure */
+  --contenuto: 1180px;
+  --gutter: clamp(18px, 4vw, 48px);
+  --sezione-y: clamp(44px, 6vw, 80px);
+  --colonna-lettura: 34em;
+  --nav-h: 56px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Base
+   -------------------------------------------------------------------------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--carta);
+  color: var(--inchiostro);
+  font-family: var(--serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* La pagina non deve mai creare un contenitore di scroll:
+   overflow-x:hidden annullerebbe tutti i position:sticky. */
+.pagina {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+p { margin: 0 0 1.1em; }
+p:last-child { margin-bottom: 0; }
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: 600;
+  font-family: var(--sans);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+ul, ol { margin: 0 0 1.2em; padding-left: 1.3em; }
+li { margin-bottom: .55em; }
+
+figure { margin: 0; }
+blockquote { margin: 0; }
+img { display: block; max-width: 100%; }
+
+a {
+  color: var(--accento);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(143, 47, 28, .35);
+}
+a:hover { color: var(--accento-hover); border-bottom-color: var(--accento-hover); }
+
+::selection { background: rgba(143, 47, 28, .18); }
+
+[hidden] { display: none !important; }
+
+/* --------------------------------------------------------------------------
+   3. Impianto di sezione
+   -------------------------------------------------------------------------- */
+.sezione { border-top: 1px solid var(--filetto); }
+.sezione--fascia { background: var(--carta-fascia); }
+.sezione--scura { background: var(--scuro); color: var(--scuro-testo); }
+
+.wrap {
+  max-width: var(--contenuto);
+  margin: 0 auto;
+  padding: var(--sezione-y) var(--gutter);
+}
+
+/* due colonne: etichetta stretta a sinistra, lettura a destra */
+.cols {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(24px, 5vw, 64px);
+}
+.cols__label { flex: 0 1 190px; }
+.cols__body {
+  flex: 1 1 520px;
+  max-width: var(--colonna-lettura);
+}
+
+/* --------------------------------------------------------------------------
+   4. Elementi tipografici ricorrenti
+   -------------------------------------------------------------------------- */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accento);
+}
+
+.etichetta {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: .1em;
+  color: var(--accento);
+}
+
+.titolo-etichetta {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-family: var(--mono);
+}
+
+.h2 {
+  font-size: clamp(26px, 3.6vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+}
+.h2--grande {
+  font-size: clamp(30px, 4.6vw, 54px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  max-width: 22em;
+}
+
+.occhiello {
+  margin: 20px 0 0;
+  max-width: 32em;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--inchiostro-72);
+}
+
+/* corpo di lettura */
+.prosa { font-size: 19.5px; line-height: 1.72; }
+.prosa .attacco { font-size: 22px; line-height: 1.55; }
+
+/* citazioni */
+.cit {
+  border-left: 3px solid var(--accento);
+  padding: 4px 0 4px 24px;
+  font-size: 18.5px;
+  line-height: 1.65;
+  font-style: italic;
+  color: var(--inchiostro-90);
+}
+.prosa .cit { margin: 26px 0; }
+.prosa > .cit:first-child { margin-top: 0; }
+.cit--eng {
+  font-size: 18px;
+  line-height: 1.62;
+  color: rgba(23, 20, 15, .85);
+}
+
+/* fonte + citazione */
+.fonte { margin: 32px 0; }
+.fonte__cap {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .03em;
+  color: var(--inchiostro-60);
+  margin-bottom: 12px;
+}
+
+/* traduzione di una citazione in lingua */
+.traduzione {
+  font-size: 17.5px;
+  color: var(--inchiostro-78);
+}
+.traduzione__label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accento);
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* elenco con filetto a sinistra (osservazioni sul processo) */
+.elenco-filetto { list-style: none; padding: 0; }
+.elenco-filetto li {
+  padding-left: 26px;
+  border-left: 1px solid rgba(23, 20, 15, .2);
+  margin-bottom: 20px;
+}
+.elenco-filetto li:last-child { margin-bottom: 0; }
+
+/* frase storica in evidenza */
+.frase-storica {
+  font-family: var(--sans);
+  font-size: clamp(26px, 3.4vw, 38px);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 34px 0 0;
+  color: var(--accento);
+}
+
+/* didascalie */
+.didascalia {
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  line-height: 1.6;
+  letter-spacing: .03em;
+  color: var(--inchiostro-55);
+}
+
+/* --------------------------------------------------------------------------
+   5. Nav
+   -------------------------------------------------------------------------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(241, 237, 228, .94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--filetto);
+}
+.nav__inner {
+  max-width: var(--contenuto);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 26px;
+  min-height: var(--nav-h);
+}
+.nav__brand {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: .01em;
+  color: var(--inchiostro);
+  border: 0;
+  margin-right: auto;
+  padding: 8px 0;
+}
+.nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 8px 0;
+}
+.nav__links a { color: rgba(23, 20, 15, .62); border: 0; }
+.nav__links a:hover { color: var(--accento); }
+
+/* --------------------------------------------------------------------------
+   6. Hero
+   -------------------------------------------------------------------------- */
+.hero {
+  max-width: var(--contenuto);
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 86px) var(--gutter) clamp(30px, 4vw, 56px);
+}
+.hero__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(28px, 4vw, 54px);
+  align-items: flex-end;
+}
+.hero__testo { flex: 1 1 420px; min-width: 280px; }
+.hero .eyebrow { display: block; margin-bottom: 22px; }
+.hero__titolo {
+  font-size: clamp(40px, 6.4vw, 78px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.hero__sottotitolo {
+  margin: 26px 0 0;
+  font-size: clamp(18px, 2vw, 21px);
+  line-height: 1.5;
+  max-width: 30em;
+  color: var(--inchiostro-78);
+  font-style: italic;
+}
+.hero__meta {
+  margin-top: 34px;
+  padding-top: 20px;
+  border-top: 1px solid var(--filetto-medio);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 34px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: .05em;
+  color: var(--inchiostro-60);
+}
+.hero__figura { flex: 0 1 340px; min-width: 230px; }
+.hero__figura img { width: 100%; border: 1px solid var(--filetto-forte); }
+
+/* --------------------------------------------------------------------------
+   7. Presentazione
+   -------------------------------------------------------------------------- */
+.presentazione .prosa { line-height: 1.68; }
+
+.nota {
+  margin-top: 34px;
+  padding: 24px 26px;
+  background: var(--carta-box);
+  border-left: 3px solid var(--accento);
+}
+.nota__label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accento);
+  margin-bottom: 12px;
+}
+.nota p {
+  font-size: 17.5px;
+  line-height: 1.62;
+  font-style: italic;
+}
+
+.responsabile {
+  margin-top: 26px;
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--inchiostro-72);
+}
+.responsabile strong { font-weight: 600; }
+
+/* --------------------------------------------------------------------------
+   8. Sintesi visiva (scrollytelling)
+   -------------------------------------------------------------------------- */
+.sintesi__intro { padding-bottom: clamp(20px, 3vw, 32px); }
+.sintesi__intro .h2 { max-width: 26em; }
+
+.scrolly {
+  position: relative;
+  border-top: 1px solid var(--filetto);
+}
+
+.scrolly__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 0;
+}
+.scrolly__palco {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--mappa-fondo);
+  overflow: hidden;
+}
+
+.scrolly__mappa { position: absolute; inset: 0; z-index: 1; }
+.scrolly__mappa iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* le immagini stanno sopra la mappa e compaiono in dissolvenza:
+   la mappa resta sempre montata (rimontarla ricaricherebbe Leaflet) */
+.scrolly__layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s ease;
+}
+.scrolly__layer.is-attivo { opacity: 1; }
+.scrolly__layer--libro {
+  object-fit: contain;
+  object-position: 8% center;
+  background: var(--mappa-fondo);
+  padding: 34px;
+}
+
+/* sfumatura di protezione sotto le schede */
+.scrolly__velo {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  pointer-events: none;
+  background: linear-gradient(to left, rgba(23, 20, 15, .5), rgba(23, 20, 15, 0) 62%);
+}
+
+.scrolly__didascalia {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 9;
+  max-width: 26em;
+  margin: 0;
+  padding: 11px 15px;
+  background: rgba(23, 20, 15, .8);
+  color: var(--carta);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  line-height: 1.55;
+  letter-spacing: .03em;
+}
+
+.scrolly__passi {
+  position: relative;
+  z-index: 2;
+  list-style: none;
+  max-width: var(--contenuto);
+  margin: -100vh auto 0;
+  padding: 24vh var(--gutter) 55vh;
+}
+.scrolly__passo {
+  max-width: 31em;
+  margin: 0 0 44vh auto;
+  background: rgba(20, 17, 12, .76);
+  backdrop-filter: blur(10px);
+  color: var(--scuro-testo);
+  padding: clamp(24px, 3vw, 34px);
+  border-left: 3px solid var(--accento-chiaro);
+}
+.scrolly__passo:last-child { margin-bottom: 0; }
+.scrolly__passo-data {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: .1em;
+  color: var(--accento-chiaro);
+  margin-bottom: 12px;
+}
+.scrolly__passo h3 {
+  font-size: clamp(21px, 2.4vw, 27px);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.scrolly__passo p {
+  font-size: 18.5px;
+  line-height: 1.65;
+  max-width: 30em;
+}
+
+/* --------------------------------------------------------------------------
+   9. Timeline delle date chiave (disattivata: vedi index.html)
+   -------------------------------------------------------------------------- */
+.timeline .wrap { padding: clamp(40px, 5vw, 64px) var(--gutter); }
+.timeline__titolo {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-family: var(--mono);
+  color: var(--inchiostro-55);
+  margin-bottom: 30px;
+}
+.timeline__griglia {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+  gap: 1px;
+  background: var(--filetto-medio);
+}
+.timeline__griglia li {
+  margin: 0;
+  background: var(--carta);
+  padding: 20px 18px 22px;
+}
+.timeline__anno {
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--accento);
+  margin-bottom: 8px;
+}
+.timeline__voce { font-size: 16px; line-height: 1.5; }
+
+/* --------------------------------------------------------------------------
+   10. Fotografie
+   -------------------------------------------------------------------------- */
+.fotografie__testa {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 16px 28px;
+  margin-bottom: 34px;
+}
+.fotografie__testa h2 {
+  font-size: clamp(26px, 3.4vw, 38px);
+  letter-spacing: -0.02em;
+}
+.fotografie__nota {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: .05em;
+  color: var(--inchiostro-55);
+  max-width: 34em;
+  line-height: 1.6;
+  margin: 0;
+}
+.griglia-foto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: clamp(20px, 2.6vw, 34px);
+}
+.griglia-foto + .griglia-foto { margin-top: clamp(20px, 2.6vw, 34px); }
+.griglia-foto img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--filetto-forte);
+}
+.griglia-foto figcaption { color: rgba(23, 20, 15, .58); }
+
+/* --------------------------------------------------------------------------
+   11. Rapporto tecnico
+   -------------------------------------------------------------------------- */
+/* barra-indice sticky, sotto la nav */
+.indice {
+  position: sticky;
+  top: calc(var(--nav-h) - 1px);
+  z-index: 15;
+  background: rgba(241, 237, 228, .94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(23, 20, 15, .12);
+}
+.indice__inner {
+  max-width: var(--contenuto);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 8px 22px;
+  flex-wrap: wrap;
+  min-height: 44px;
+}
+.indice__label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--inchiostro-45);
+}
+.indice__links {
+  display: flex;
+  gap: 4px 18px;
+  flex-wrap: wrap;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  padding: 6px 0;
+}
+.indice__links a {
+  border: 0;
+  padding: 3px 0 4px;
+  white-space: nowrap;
+  color: var(--inchiostro-55);
+  font-weight: 400;
+}
+.indice__links a.is-corrente {
+  color: var(--accento);
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--accento);
+}
+
+.rapporto__testa { padding-bottom: clamp(30px, 4vw, 48px); }
+.rapporto__testa .eyebrow { display: block; margin-bottom: 20px; }
+.rapporto__testa .occhiello {
+  margin-top: 26px;
+  font-size: 19px;
+  line-height: 1.65;
+  color: rgba(23, 20, 15, .75);
+}
+
+.rapporto__sommario {
+  margin-top: 44px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px 40px;
+  align-items: flex-start;
+  padding-top: 26px;
+  border-top: 1px solid var(--filetto-medio);
+}
+.sommario {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 480px;
+  columns: 2;
+  column-gap: 40px;
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.45;
+}
+.sommario li { margin-bottom: 12px; break-inside: avoid; }
+.sommario a { color: var(--inchiostro); border: 0; }
+.sommario a:hover { color: var(--accento); }
+.sommario__n {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--accento);
+  margin-right: 10px;
+}
+
+.scheda-pdf {
+  flex: 0 1 250px;
+  border: 1px solid var(--inchiostro);
+  background: var(--inchiostro);
+  color: var(--carta);
+  padding: 18px 22px;
+  display: block;
+}
+.scheda-pdf:hover {
+  background: var(--accento);
+  border-color: var(--accento);
+  color: var(--carta);
+}
+.scheda-pdf__label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .7;
+  margin-bottom: 9px;
+}
+.scheda-pdf__titolo {
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.rapporto__corpo { padding-top: 0; }
+
+.sez {
+  padding-top: clamp(34px, 5vw, 64px);
+  border-top: 1px solid var(--filetto);
+}
+.sez + .sez { margin-top: clamp(40px, 6vw, 72px); }
+.sez__riga {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(18px, 4vw, 56px);
+}
+.sez__label { flex: 0 1 190px; }
+.sez__corpo { flex: 1 1 520px; max-width: var(--colonna-lettura); }
+.sez__corpo h3 {
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+/* riga libro: copertina a sinistra, commento a destra */
+.libro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(18px, 4vw, 56px);
+  margin-top: clamp(34px, 4vw, 56px);
+  padding-top: clamp(26px, 3vw, 40px);
+  border-top: 1px solid var(--filetto);
+}
+.libro__copertine {
+  flex: 0 1 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.libro__cover { flex: 0 1 190px; }
+.libro__cover img,
+.libro__copertine img {
+  width: 100%;
+  border: 1px solid var(--filetto-forte);
+}
+.libro__cover--ombra img { box-shadow: 0 1px 0 rgba(23, 20, 15, .08); }
+.libro__cover figcaption,
+.libro__copertine figcaption { color: var(--inchiostro-60); }
+.libro__corpo { flex: 1 1 520px; max-width: var(--colonna-lettura); }
+.libro__titolo {
+  font-size: 20px;
+  line-height: 1.3;
+  margin-bottom: 18px;
+}
+.libro__titolo em { font-weight: 400; }
+
+/* testata tipografica provvisoria di Patria indipendente */
+.testata-pi {
+  display: block;
+  border: 1px solid var(--filetto-forte);
+  background: var(--carta-box);
+  padding: 26px 20px;
+  text-align: center;
+  color: var(--inchiostro);
+}
+.testata-pi:hover { background: var(--carta-hover); color: var(--inchiostro); }
+.testata-pi__nome {
+  font-family: var(--sans);
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.testata-pi__filetto {
+  width: 34px;
+  height: 2px;
+  background: var(--accento);
+  margin: 14px auto;
+}
+.testata-pi__nota {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: .08em;
+  line-height: 1.6;
+  color: var(--inchiostro-60);
+}
+
+/* schede-link (archivio UK, documentario BBC) */
+.schede-link {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 32px 0;
+}
+.scheda-link {
+  display: block;
+  padding: 18px 20px;
+  background: var(--carta-fascia);
+  border: 1px solid var(--filetto-medio);
+  color: var(--inchiostro);
+}
+.scheda-link:hover { background: var(--carta-hover); color: var(--inchiostro); }
+.scheda-link__fonte {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accento);
+  margin-bottom: 10px;
+}
+.scheda-link__titolo {
+  font-family: var(--sans);
+  font-size: 16.5px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.scheda-link__nota {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--inchiostro-65);
+  margin-top: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   12. Saggio di Martino (sezione invertita)
+   -------------------------------------------------------------------------- */
+.saggio .wrap { padding: clamp(48px, 7vw, 90px) var(--gutter); }
+.saggio__eyebrow {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accento-chiaro);
+}
+.saggio h2 {
+  font-size: clamp(26px, 3.6vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+.saggio__testo {
+  margin-top: 22px;
+  font-size: 19.5px;
+  line-height: 1.68;
+  color: var(--scuro-testo-82);
+}
+.saggio__azioni {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+.btn {
+  display: block;
+  padding: 16px 22px;
+  border: 0;
+}
+.btn__label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  display: block;
+  opacity: .6;
+  margin-bottom: 7px;
+}
+.btn__testo {
+  font-family: var(--sans);
+  font-size: 16.5px;
+  font-weight: 600;
+}
+.btn--pieno { background: var(--carta); color: var(--inchiostro); }
+.btn--pieno:hover { background: var(--accento-chiaro); color: var(--inchiostro); }
+.btn--filo {
+  border: 1px solid rgba(241, 237, 228, .3);
+  color: var(--scuro-testo);
+}
+.btn--filo:hover { border-color: var(--accento-chiaro); color: var(--accento-chiaro); }
+
+/* --------------------------------------------------------------------------
+   13. Bibliografia
+   -------------------------------------------------------------------------- */
+.bibliografia .cols__body { max-width: 36em; }
+.biblio {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.biblio li {
+  padding: 16px 0;
+  margin: 0;
+  border-top: 1px solid var(--filetto-medio);
+}
+.biblio li:last-child { border-bottom: 1px solid var(--filetto-medio); }
+
+/* --------------------------------------------------------------------------
+   14. Footer
+   -------------------------------------------------------------------------- */
+.footer { border-top: 1px solid var(--filetto); }
+.footer .wrap {
+  padding: clamp(36px, 5vw, 60px) var(--gutter);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px 48px;
+  align-items: flex-start;
+}
+.footer__principale { flex: 1 1 320px; max-width: 30em; }
+.footer__label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(23, 20, 15, .5);
+  margin-bottom: 12px;
+}
+.footer__principale p { font-size: 17.5px; line-height: 1.6; }
+.footer__note {
+  flex: 0 1 260px;
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.75;
+  color: var(--inchiostro-55);
+}
+.footer__anno { margin-top: 14px; }
+
+/* --------------------------------------------------------------------------
+   15. Preferenze di movimento ridotto
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .scrolly__layer { transition: none; }
+}
