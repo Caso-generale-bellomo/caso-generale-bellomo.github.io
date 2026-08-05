@@ -50,7 +50,9 @@
   --contenuto: 1180px;
   --gutter: clamp(18px, 4vw, 48px);
   --sezione-y: clamp(44px, 6vw, 80px);
-  --colonna-lettura: 34em;
+  /* colonna di lettura: 34em a corpo 19.5px. In px e non in em perche'
+     deve valere identica ovunque, anche dove il contenitore eredita 16px */
+  --colonna-lettura: 663px;
   --nav-h: 56px;
 }
 
@@ -124,9 +126,10 @@ a:hover { color: var(--accento-hover); border-bottom-color: var(--accento-hover)
   flex-wrap: wrap;
   gap: clamp(24px, 5vw, 64px);
 }
-.cols__label { flex: 0 1 190px; }
+.cols__label { flex: 0 1 190px; min-width: 0; }
 .cols__body {
   flex: 1 1 520px;
+  min-width: 0; /* senza questo un flex item non scende sotto il proprio contenuto */
   max-width: var(--colonna-lettura);
 }
 
@@ -398,10 +401,16 @@ a:hover { color: var(--accento-hover); border-bottom-color: var(--accento-hover)
   overflow: hidden;
 }
 
-.scrolly__mappa { position: absolute; inset: 0; z-index: 1; }
+.scrolly__mappa { position: absolute; inset: 0; z-index: 1; overflow: hidden; }
+/* iOS ignora width/height sugli iframe e li allarga fino al contenuto:
+   la mappa trascinerebbe con se' tutta la pagina, che finirebbe piu' larga
+   della finestra. width:1px + min-width:100% e' il rimedio noto. */
 .scrolly__mappa iframe {
-  width: 100%;
-  height: 100%;
+  width: 1px;
+  min-width: 100%;
+  height: 1px;
+  min-height: 100%;
+  max-width: 100%;
   border: 0;
   display: block;
 }
@@ -425,6 +434,13 @@ a:hover { color: var(--accento-hover); border-bottom-color: var(--accento-hover)
   object-position: 8% center;
   background: var(--mappa-fondo);
   padding: 34px;
+}
+/* foto verticali: intere, non tagliate dal cover */
+.scrolly__layer--verticale {
+  object-fit: contain;
+  object-position: 12% center;
+  background: var(--mappa-fondo);
+  padding: 30px;
 }
 
 /* sfumatura di protezione sotto le schede */
@@ -562,6 +578,106 @@ a:hover { color: var(--accento-hover); border-bottom-color: var(--accento-hover)
 .griglia-foto figcaption { color: rgba(23, 20, 15, .58); }
 
 /* --------------------------------------------------------------------------
+   10-bis. Ingrandimento delle fotografie
+   Al passaggio del mouse l'immagine si avvicina dentro la sua cornice;
+   al clic si apre a tutto schermo. Tocca solo le foto, non le copertine.
+   -------------------------------------------------------------------------- */
+.zoom {
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--filetto-forte);
+  overflow: hidden;
+  cursor: zoom-in;
+  position: relative;
+}
+.zoom img {
+  border: 0;
+  transition: transform .45s ease;
+}
+.zoom:hover img,
+.zoom:focus-visible img { transform: scale(1.06); }
+.zoom:focus-visible { outline: 2px solid var(--accento); outline-offset: 2px; }
+
+/* piccolo segno che l'immagine si apre */
+.zoom::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1;
+  color: var(--carta);
+  background: rgba(23, 20, 15, .72);
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.zoom:hover::after,
+.zoom:focus-visible::after { opacity: 1; }
+
+/* le griglie e l'hero disegnano il bordo sul pulsante, non sull'immagine */
+.griglia-foto .zoom img,
+.hero__figura .zoom img { border: 0; }
+
+.lente {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: clamp(16px, 4vw, 48px);
+  background: rgba(15, 13, 10, .97);
+  cursor: zoom-out;
+}
+.lente[hidden] { display: none !important; }
+.lente__img {
+  max-width: min(100%, 1400px);
+  max-height: 82vh;
+  width: auto;
+  object-fit: contain;
+  border: 1px solid rgba(241, 237, 228, .18);
+}
+.lente__didascalia {
+  max-width: 46em;
+  margin: 0;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: .03em;
+  color: rgba(241, 237, 228, .72);
+}
+.lente__chiudi {
+  position: absolute;
+  top: clamp(12px, 2vw, 22px);
+  right: clamp(12px, 2vw, 22px);
+  padding: 8px 14px;
+  border: 1px solid rgba(241, 237, 228, .3);
+  background: none;
+  color: var(--scuro-testo);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.lente__chiudi:hover,
+.lente__chiudi:focus-visible { border-color: var(--accento-chiaro); color: var(--accento-chiaro); }
+.lente__chiudi:focus-visible { outline: 1px solid var(--accento-chiaro); outline-offset: 2px; }
+
+body.lente-aperta { overflow: hidden; }
+
+/* --------------------------------------------------------------------------
    11. Rapporto tecnico
    -------------------------------------------------------------------------- */
 /* barra-indice sticky, sotto la nav */
@@ -689,8 +805,8 @@ a:hover { color: var(--accento-hover); border-bottom-color: var(--accento-hover)
   flex-wrap: wrap;
   gap: clamp(18px, 4vw, 56px);
 }
-.sez__label { flex: 0 1 190px; }
-.sez__corpo { flex: 1 1 520px; max-width: var(--colonna-lettura); }
+.sez__label { flex: 0 1 190px; min-width: 0; }
+.sez__corpo { flex: 1 1 520px; min-width: 0; max-width: var(--colonna-lettura); }
 .sez__corpo h3 {
   font-size: clamp(24px, 3vw, 32px);
   line-height: 1.15;
@@ -721,7 +837,7 @@ a:hover { color: var(--accento-hover); border-bottom-color: var(--accento-hover)
 .libro__cover--ombra img { box-shadow: 0 1px 0 rgba(23, 20, 15, .08); }
 .libro__cover figcaption,
 .libro__copertine figcaption { color: var(--inchiostro-60); }
-.libro__corpo { flex: 1 1 520px; max-width: var(--colonna-lettura); }
+.libro__corpo { flex: 1 1 520px; min-width: 0; max-width: var(--colonna-lettura); }
 .libro__titolo {
   font-size: 20px;
   line-height: 1.3;
@@ -900,9 +1016,53 @@ a:hover { color: var(--accento-hover); border-bottom-color: var(--accento-hover)
 .footer__anno { margin-top: 14px; }
 
 /* --------------------------------------------------------------------------
-   15. Preferenze di movimento ridotto
+   15. Schermi stretti
+   Il design di riferimento si affidava solo a flex-wrap e clamp(). Funziona,
+   ma dipende dall'aritmetica dei flex-basis: qui l'impilamento e' esplicito,
+   cosi' su telefono il risultato non dipende dal motore del browser.
+   -------------------------------------------------------------------------- */
+@media (max-width: 880px) {
+  .cols,
+  .sez__riga,
+  .libro,
+  .hero__inner { display: block; }
+
+  .cols__body,
+  .sez__corpo,
+  .libro__corpo,
+  .hero__testo { max-width: none; min-width: 0; width: auto; }
+
+  .cols__label,
+  .sez__label { margin-bottom: 18px; }
+
+  .hero__figura { margin-top: 30px; max-width: 420px; }
+
+  /* copertine: piu' piccole e affiancate alla didascalia non stanno,
+     restano in cima al commento a larghezza contenuta */
+  .libro__cover,
+  .libro__copertine { max-width: 190px; margin-bottom: 26px; }
+  .libro__copertine { display: flex; flex-direction: row; gap: 16px; max-width: none; }
+  .libro__copertine figure { flex: 0 1 190px; }
+
+  .sommario { columns: 1; }
+  .rapporto__sommario { display: block; }
+  .scheda-pdf { margin-top: 24px; max-width: 280px; }
+
+  .footer .wrap { display: block; }
+  .footer__note { margin-top: 26px; }
+}
+
+@media (max-width: 560px) {
+  .scrolly__passo { max-width: none; margin-right: 0; }
+  .lente__img { max-height: 74vh; }
+}
+
+/* --------------------------------------------------------------------------
+   16. Preferenze di movimento ridotto
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .scrolly__layer { transition: none; }
+  .scrolly__layer,
+  .zoom img { transition: none; }
+  .zoom:hover img { transform: none; }
 }

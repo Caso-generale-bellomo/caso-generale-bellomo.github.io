@@ -1,10 +1,11 @@
 /* Generale Nicola Bellomo - logica di pagina.
-   Due sole cose, entrambe guidate dallo scroll:
+   Tre cose, nessuna dipendenza esterna:
    1. la barra-indice del rapporto evidenzia la sezione corrente;
    2. lo scrollytelling della sintesi visiva cambia immagine, didascalia
-      e inquadratura della mappa a seconda del passaggio in vista.
-   Nessuna dipendenza esterna. I contenuti (didascalie, viste) stanno
-   negli attributi data-* del markup, non qui. */
+      e inquadratura della mappa a seconda del passaggio in vista;
+   3. le fotografie si aprono a tutto schermo al clic.
+   I contenuti (didascalie, viste) stanno negli attributi data-* del
+   markup e nelle figcaption, non qui. */
 (function () {
   'use strict';
 
@@ -93,4 +94,47 @@
 
   aggiornaIndice();
   aggiornaScrolly();
+
+  /* --- ingrandimento delle fotografie --- */
+  var lente = document.getElementById('lente');
+  var lenteImg = document.getElementById('lente-img');
+  var lenteDid = document.getElementById('lente-didascalia');
+  var lenteChiudi = document.getElementById('lente-chiudi');
+  var tornaA = null;
+
+  function apriLente(bottone) {
+    var img = bottone.querySelector('img');
+    if (!img || !lente) return;
+    var figura = bottone.closest('figure');
+    var did = figura && figura.querySelector('figcaption');
+    lenteImg.src = img.currentSrc || img.src;
+    lenteImg.alt = img.alt || '';
+    lenteDid.textContent = did ? did.textContent.trim() : '';
+    lente.hidden = false;
+    document.body.classList.add('lente-aperta');
+    tornaA = bottone;
+    lenteChiudi.focus();
+  }
+
+  function chiudiLente() {
+    if (!lente || lente.hidden) return;
+    lente.hidden = true;
+    lenteImg.src = '';
+    document.body.classList.remove('lente-aperta');
+    if (tornaA) { tornaA.focus(); tornaA = null; }
+  }
+
+  document.querySelectorAll('.zoom').forEach(function (b) {
+    b.addEventListener('click', function () { apriLente(b); });
+  });
+
+  if (lente) {
+    /* un clic ovunque sullo sfondo chiude; sull'immagine no */
+    lente.addEventListener('click', function (e) {
+      if (e.target !== lenteImg) chiudiLente();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') chiudiLente();
+    });
+  }
 })();
