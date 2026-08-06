@@ -210,19 +210,45 @@ a:hover { color: var(--accento-hover); border-bottom-color: var(--accento-hover)
   margin-bottom: 12px;
 }
 
-/* traduzione di una citazione in lingua */
-.traduzione {
-  font-size: 17.5px;
-  color: var(--inchiostro-78);
+/* citazione in lingua e sua traduzione, affiancate.
+   Il blocco esce a destra dalla colonna di lettura quando c'e' spazio:
+   due colonne di testo hanno bisogno di piu' larghezza di una. */
+.bilingue {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 2.6vw, 36px);
+  align-items: start;
+  margin: 30px 0;
 }
-.traduzione__label {
+.bilingue .cit {
+  margin: 0;
+  font-size: 16.5px;
+  line-height: 1.62;
+}
+.bilingue__it {
+  font-size: 16.5px;
+  line-height: 1.62;
+  color: var(--inchiostro-78);
+  border-left: 1px solid var(--filetto-forte);
+  padding: 4px 0 4px 24px;
+}
+.bilingue__label {
+  display: block;
   font-family: var(--mono);
   font-size: 10.5px;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--accento);
-  display: block;
-  margin-bottom: 8px;
+  font-style: normal;
+  margin-bottom: 10px;
+}
+.bilingue .cit .bilingue__label { color: var(--inchiostro-55); }
+.bilingue__it .bilingue__label { color: var(--accento); }
+
+@media (min-width: 1240px) {
+  .bilingue { width: calc(100% + 160px); }
+}
+@media (max-width: 720px) {
+  .bilingue { grid-template-columns: 1fr; gap: 22px; }
 }
 
 /* elenco con filetto a sinistra (osservazioni sul processo) */
