@@ -435,6 +435,10 @@ a:hover { color: var(--accento-hover); border-bottom-color: var(--accento-hover)
   background: var(--mappa-fondo);
   padding: 34px;
 }
+/* foto con le teste in alto: il taglio del cover deve togliere i piedi,
+   non i volti */
+.scrolly__layer--alto { object-position: center top; }
+
 /* foto verticali: intere, non tagliate dal cover */
 .scrolly__layer--verticale {
   object-fit: contain;
