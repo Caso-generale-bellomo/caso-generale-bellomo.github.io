@@ -354,18 +354,6 @@ a:hover { color: var(--accento-hover); border-bottom-color: var(--accento-hover)
   color: var(--inchiostro-78);
   font-style: italic;
 }
-.hero__meta {
-  margin-top: 34px;
-  padding-top: 20px;
-  border-top: 1px solid var(--filetto-medio);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 34px;
-  font-family: var(--mono);
-  font-size: 11.5px;
-  letter-spacing: .05em;
-  color: var(--inchiostro-60);
-}
 .hero__figura { flex: 0 1 340px; min-width: 230px; }
 .hero__figura img { width: 100%; border: 1px solid var(--filetto-forte); }
 
