@@ -23,8 +23,10 @@
   --inchiostro-72: rgba(23, 20, 15, .72);
   --inchiostro-65: rgba(23, 20, 15, .65);
   --inchiostro-60: rgba(23, 20, 15, .6);
-  --inchiostro-55: rgba(23, 20, 15, .55);
-  --inchiostro-45: rgba(23, 20, 15, .45);
+  /* i grigi del testo minuto stanno a .62: sotto quella soglia didascalie
+     e etichette non arrivano al contrasto 4.5:1 richiesto dalle WCAG AA */
+  --inchiostro-55: rgba(23, 20, 15, .62);
+  --inchiostro-45: rgba(23, 20, 15, .6);
 
   /* filetti */
   --filetto: rgba(23, 20, 15, .14);
@@ -106,6 +108,37 @@ a:hover { color: var(--accento-hover); border-bottom-color: var(--accento-hover)
 ::selection { background: rgba(143, 47, 28, .18); }
 
 [hidden] { display: none !important; }
+
+/* chi naviga da tastiera deve poter saltare la barra di navigazione;
+   il link resta invisibile finche' non riceve il fuoco */
+.salta {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--inchiostro);
+  color: var(--carta);
+  border: 0;
+  padding: 12px 18px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.salta:focus {
+  left: 8px;
+  top: 8px;
+  color: var(--carta);
+}
+
+/* il fuoco da tastiera deve vedersi anche dove il bordo del link e' tolto */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accento);
+  outline-offset: 3px;
+}
+.sezione--scura a:focus-visible,
+.sezione--scura button:focus-visible { outline-color: var(--accento-chiaro); }
 
 /* --------------------------------------------------------------------------
    3. Impianto di sezione
@@ -593,7 +626,7 @@ a:hover { color: var(--accento-hover); border-bottom-color: var(--accento-hover)
   object-fit: cover;
   border: 1px solid var(--filetto-forte);
 }
-.griglia-foto figcaption { color: rgba(23, 20, 15, .58); }
+.griglia-foto figcaption { color: rgba(23, 20, 15, .64); }
 
 /* --------------------------------------------------------------------------
    10-bis. Ingrandimento delle fotografie
@@ -1020,7 +1053,7 @@ body.lente-aperta { overflow: hidden; }
   font-size: 10.5px;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: rgba(23, 20, 15, .5);
+  color: rgba(23, 20, 15, .62);
   margin-bottom: 12px;
 }
 .footer__principale p { font-size: 17.5px; line-height: 1.6; }

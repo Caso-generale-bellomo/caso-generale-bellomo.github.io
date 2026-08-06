@@ -1,0 +1,5 @@
+# Sito di documentazione storica: tutto indicizzabile.
+User-agent: *
+Allow: /
+
+Sitemap: https://caso-generale-bellomo.github.io/sitemap.xml

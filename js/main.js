@@ -100,6 +100,7 @@
   var lenteImg = document.getElementById('lente-img');
   var lenteDid = document.getElementById('lente-didascalia');
   var lenteChiudi = document.getElementById('lente-chiudi');
+  var pagina = document.querySelector('.pagina');
   var tornaA = null;
 
   function apriLente(bottone) {
@@ -112,6 +113,8 @@
     lenteDid.textContent = did ? did.textContent.trim() : '';
     lente.hidden = false;
     document.body.classList.add('lente-aperta');
+    /* il resto della pagina esce dalla navigazione finche' la lente e' aperta */
+    pagina.inert = true;
     tornaA = bottone;
     lenteChiudi.focus();
   }
@@ -121,11 +124,20 @@
     lente.hidden = true;
     lenteImg.src = '';
     document.body.classList.remove('lente-aperta');
+    pagina.inert = false;
     if (tornaA) { tornaA.focus(); tornaA = null; }
   }
 
   document.querySelectorAll('.zoom').forEach(function (b) {
     b.addEventListener('click', function () { apriLente(b); });
+    /* l'etichetta per gli screen reader dice quale foto si apre:
+       la prende dalla didascalia, cosi' resta una sola fonte del testo */
+    var fig = b.closest('figure');
+    var did = fig && fig.querySelector('figcaption');
+    if (did) {
+      var t = did.textContent.replace(/\s*\[.*?\]\s*/g, ' ').trim();
+      if (t) b.setAttribute('aria-label', 'Ingrandisci la fotografia: ' + t);
+    }
   });
 
   if (lente) {
